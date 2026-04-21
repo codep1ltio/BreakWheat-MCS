@@ -1,8 +1,14 @@
 # spanish
 on load:
-    set {lang::SPA::saved_variable_data} to "&7Datos de variables &fguardados automáticamente."
+    set {lang::SPA::saved_variable_data} to "&7Datos de variables &factualizados."
     set {lang::SPA::balance} to "&aʙᴀʟᴀɴcᴇ"
-    set {lang::SPA::cooldownMessage} to "&cPor favor, no hagas spam de comandos."
-    set {lang::SPA::languages} to "&didiomas"
-    set {lang::SPA::settings} to "&lCONFIGURACION"
+    set {lang::SPA::cooldownMessage} to "&cPor favor no hagas spam de comandos."
+    set {lang::SPA::languages} to "&dIdiomas"
+    set {lang::SPA::settings} to "&lAJUSTES"
     set {lang::SPA::return} to "Volver"
+    set {lang::SPA::upgradables} to "Mejoras"
+    set {lang::SPA::itemDrop} to "Soltar objetos está deshabilitado. Si algo está mal, contacta con el staff"
+    set {lang::SPA::upgradeTools} to "Mejorar herramientas"
+    set {lang::SPA::buyHoes} to "Mejorar cosechadora"
+    set {lang::SPA::harvesterShop} to "Tienda de cosechadoras"
+    set {lang::SPA::requirements} to "&8-- &7Requisitos &8--"
