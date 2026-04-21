@@ -1,8 +1,14 @@
 # german
 on load:
-    set {lang::DE::saved_variable_data} to "&7Gespeicherte &fVariablendaten."
-    set {lang::DE::balance} to "&aKontostand"
-    set {lang::DE::cooldownMessage} to "&cBitte warte einen Moment."
+    set {lang::DE::saved_variable_data} to "&7Aktualisierte &fVariablendaten."
+    set {lang::DE::balance} to "&aᴋᴏɴᴛᴏꜱᴛᴀɴᴅ"
+    set {lang::DE::cooldownMessage} to "&cBitte spamme keine Befehle."
     set {lang::DE::languages} to "&dSprachen"
     set {lang::DE::settings} to "&lEINSTELLUNGEN"
     set {lang::DE::return} to "Zurück"
+    set {lang::DE::upgradables} to "Upgrades"
+    set {lang::DE::itemDrop} to "Das Droppen von Items ist deaktiviert. Wenn etwas nicht stimmt, kontaktiere einen Mitarbeiter"
+    set {lang::DE::upgradeTools} to "Werkzeuge verbessern"
+    set {lang::DE::buyHoes} to "Ernter verbessern"
+    set {lang::DE::harvesterShop} to "Ernter-Shop"
+    set {lang::DE::requirements} to "&8-- &7Anforderungen &8--"
