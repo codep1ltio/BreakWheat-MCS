@@ -1,0 +1,130 @@
+# load yml "plugins/Skript/scripts/yaml/data.yml"
+# set yml value "users.uuid001.balance" from "data" to 5000
+# yml value "users.uuid001.balance" from "data" // get value
+# save yml "data"
+# unload yml "data"
+
+on load:
+    load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
+
+on join:
+    saveVariableData(player)
+
+#   ---------------------------------------------------
+#   ---------------------------------------------------
+command reloadyml:
+    permission: op
+    trigger:
+        reload(player)
+
+        loop all players:
+            saveVariableData(loop-player)
+            wait 1 tick
+#   ---------------------------------------------------
+#   ---------------------------------------------------
+
+function saveVariableData(p: player, b: boolean = true):
+
+    {_p} is a player
+
+    set {-data::%uuid of {_p}%::blast} to fetchBlast({_p})
+    set {-data::%uuid of {_p}%::balance} to fetchBalance({_p})
+    set {-language::%uuid of {_p}%} to fetchLanguage({_p})
+    set {-multiplier::%uuid of {_p}%} to fetchMultiplier({_p})
+    set {-speed::%uuid of {_p}%} to fetchSpeed({_p})
+    set {-hoe::%uuid of {_p}%} to fetchHoe({_p})
+
+    {_b} is true
+    send action bar "%{lang::%{-language::%uuid of {_p}%}%::saved_variable_data}%" to {_p}
+
+local function save():
+    if yml "data" isn't loaded:
+        load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
+    save yml "data"
+
+#   !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !!!
+#   !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !!!
+#   FOR FUTURE ME: RELOAD **DOES** NOT SAVE, IT LOADS FROM CURRENT YAML FILE : IT DOES NOT SAVE NEW INFORMATION
+#   SO DATA CAN BE LOST, ONLY USE THIS WHEN TESTING OR SAVE FIRST THEN RELOAD 
+#   !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !! --- !!!
+#   !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !! !!!! !!!
+local function reload(p: player):
+    unload yml "data"
+    load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
+    send "reloaded yml" to {_p}
+
+
+
+local function init(p: player):
+    if yml "data" isn't loaded:
+        load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
+    set {_uuid} to (uuid of {_p})
+
+    if yml path "users.%{_uuid}%.balance" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.balance" from "data" to 0
+
+    if yml path "users.%{_uuid}%.tokens" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.tokens" from "data" to 0
+
+    if yml path "users.%{_uuid}%.blast" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.blast" from "data" to 0
+
+    if yml path "users.%{_uuid}%.multiplier" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.multiplier" from "data" to 1
+
+    if yml path "users.%{_uuid}%.speed" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.speed" from "data" to 0
+
+    if yml path "users.%{_uuid}%.lang" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.lang" from "data" to "EN"
+
+    if yml path "users.%{_uuid}%.hoe" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.hoe" from "data" to 1
+
+    save()
+
+#   ====================================#   ====================================
+#   FFFFF EEE TT CC HHH I NN GGG #   ====================================
+#   FF   EEE TT CC HHH I NN GGG  #   ====================================
+#   ====================================#   ====================================
+
+function fetchLanguage(p: player) :: text:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.lang" from "data")
+
+function fetchBalance(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.balance" from "data")
+
+function fetchBlast(p: player) :: integer:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.blast" from "data")
+
+function fetchMultiplier(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.multiplier" from "data")
+
+function fetchSpeed(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.speed" from "data")
+
+function fetchHoe(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.hoe" from "data")
+
+#
+# ADD
+# ADD
+#
+function addBalance(p: player, amount: number):
+    set yml value "users.%uuid of {_p}%.balance" from "data" to (fetchBalance({_p}) + {_amount})
+
+#
+# SET
+# SET
+#
+function setLanguage(p: player, lang: text):
+    init({_p})
+    set yml value "users.%uuid of {_p}%.lang" from "data" to {_lang}
+    play sound "entity.experience_orb.pickup" with volume 1 and pitch 1 to {_p}
+    saveVariableData({_p}, false)

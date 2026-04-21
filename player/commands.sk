@@ -1,0 +1,25 @@
+command settings:
+    aliases: config, configuration
+    cooldown: 3 seconds
+    cooldown message: %{lang::%{-language::%uuid of player%}%::cooldownMessage}%
+    trigger:
+        openSettings(player)
+
+command shop:
+    aliases: harvestershop, harvester, harvesters, upgrade, upgradetools
+    cooldown: 3 seconds
+    cooldown message: %{lang::%{-language::%uuid of player%}%::cooldownMessage}%
+    trigger:
+        openUpgradeToolsMenu(player)
+
+command balance [<player>]:
+    aliases: bal, money
+    cooldown: 3 seconds
+    cooldown message: %{lang::%{-language::%uuid of player%}%::cooldownMessage}%
+    trigger:
+        if arg-1 is not set:
+            send "&b&l%player%" to player
+            send "%{lang::%{-language::%uuid of player%}%::balance}%: $%fetchBalance(player)%" to player
+        else:
+            send "&b&l%arg-1%" to player
+            send "%{lang::%{-language::%uuid of player%}%::balance}%: $%fetchBalance(arg-1)%" to player

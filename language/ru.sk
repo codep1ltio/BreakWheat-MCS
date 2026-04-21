@@ -1,0 +1,8 @@
+# russian
+on load:
+    set {lang::RU::saved_variable_data} to "&7Автоматически сохранены &fданные переменных."
+    set {lang::RU::balance} to "&aБаланс"
+    set {lang::RU::cooldownMessage} to "&cПожалуйста, не спамьте команды."
+    set {lang::RU::languages} to "&dязыки"
+    set {lang::RU::settings} to "&lнастройки"
+    set {lang::RU::return} to "возврат"

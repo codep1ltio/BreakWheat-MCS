@@ -1,0 +1,8 @@
+# spanish
+on load:
+    set {lang::SPA::saved_variable_data} to "&7Datos de variables &fguardados automáticamente."
+    set {lang::SPA::balance} to "&aʙᴀʟᴀɴcᴇ"
+    set {lang::SPA::cooldownMessage} to "&cPor favor, no hagas spam de comandos."
+    set {lang::SPA::languages} to "&didiomas"
+    set {lang::SPA::settings} to "&lCONFIGURACION"
+    set {lang::SPA::return} to "Volver"

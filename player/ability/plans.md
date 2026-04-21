@@ -1,0 +1,1 @@
+# abilities will be rollable like RNG and they can't have more than 1

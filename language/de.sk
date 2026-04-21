@@ -1,0 +1,8 @@
+# german
+on load:
+    set {lang::DE::saved_variable_data} to "&7Gespeicherte &fVariablendaten."
+    set {lang::DE::balance} to "&aKontostand"
+    set {lang::DE::cooldownMessage} to "&cBitte warte einen Moment."
+    set {lang::DE::languages} to "&dSprachen"
+    set {lang::DE::settings} to "&lEINSTELLUNGEN"
+    set {lang::DE::return} to "Zurück"

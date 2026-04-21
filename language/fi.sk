@@ -1,0 +1,8 @@
+# finnish
+on load:
+    set {lang::FI::saved_variable_data} to "&7Päivitettiin &fVariable Daata."
+    set {lang::FI::balance} to "&aRahaa"
+    set {lang::FI::cooldownMessage} to "&cOdota Hetkesi."
+    set {lang::FI::languages} to "&dKielejä"
+    set {lang::FI::settings} to "&lASETUKSET"
+    set {lang::FI::return} to "Takaisin"

@@ -1,0 +1,35 @@
+command giveHoe <player> <integer>:
+    permission: op
+    trigger:
+        give {hoes::%arg-2%} to arg-1
+
+function giveHoe(p: player, i: integer):
+    give {hoes::%{_i}%} to {_p}
+
+on load:
+    set {hoes::1} to unbreakable wooden hoe named "<#5c5730>Broken Harvester" with lore "&8Starter" and " " and "<#F48566>Blast: &f%{hoes::1::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::1::mult}%"
+    set {hoes::1::blast} to 0
+    set {hoes::1::mult} to 1.05
+
+    set {hoes::2} to unbreakable wooden hoe named "<#5e502d>Rotted Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::2::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::2::mult}%"
+    set {hoes::2::blast} to 0
+    set {hoes::2::mult} to 1.08
+    set {hoes::2::price} to 1000
+    set {hoes::2::tokens} to 1
+    set {hoes::2::level} to 3
+
+    set {hoes::3} to unbreakable wooden hoe named "<#cf7f29>Rusted Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::3::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::3::mult}%"
+    set {hoes::3::blast} to 0
+    set {hoes::3::mult} to 1.1
+
+    set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::4::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::4::mult}%"
+    set {hoes::4::blast} to 0
+    set {hoes::4::mult} to 1.11
+
+    set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::5::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::5::mult}%"
+    set {hoes::5::blast} to 0
+    set {hoes::5::mult} to 1.13
+
+    set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::6::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::6::mult}%"
+    set {hoes::6::blast} to 0
+    set {hoes::6::mult} to 1.08

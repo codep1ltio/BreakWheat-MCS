@@ -1,0 +1,12 @@
+on inventory click:
+    cancel event
+    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::settings}%":
+        if event-slot is 15:
+            openSettingsLanguages(player)
+
+    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::settings}% - %{lang::%{-language::%uuid of player%}%::languages}%":
+        settingsLanguageSelection(index of event-slot, player)
+
+    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::upgradeTools}%":
+        if event-slot is 13:
+            openHarvesterShop(player)

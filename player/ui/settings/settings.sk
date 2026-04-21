@@ -1,0 +1,4 @@
+function openSettings(p: player):
+    set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::settings}%"
+    set slot 15 of {_s} to bookshelf named "%{lang::%{-language::%uuid of {_p}%}%::languages}%"
+    open {_s} to {_p}

@@ -1,0 +1,13 @@
+on load:
+    set {lang::EN::saved_variable_data} to "&7Updated &fVariable Data."
+    set {lang::EN::balance} to "&aʙᴀʟᴀɴcᴇ"
+    set {lang::EN::cooldownMessage} to "&cPlease do not spam commands."
+    set {lang::EN::languages} to "&dLanguages"
+    set {lang::EN::settings} to "&lSETTINGS"
+    set {lang::EN::return} to "Return"
+    set {lang::EN::upgradables} to "Upgradables"
+    set {lang::EN::itemDrop} to "Dropping items are disabled. If something is wrong contact a staff member"
+    set {lang::EN::upgradeTools} to "Upgrade Tools"
+    set {lang::EN::buyHoes} to "Upgrade Harvester"
+    set {lang::EN::harvesterShop} to "Harvester Shop"
+    set {lang::EN::requirements} to "&8-- &7Requirements &8--"

@@ -1,0 +1,2 @@
+function calculateBalance(p: player, b: number) :: number:
+    return ({-multiplier::%uuid of {_p}%} + {hoes::%{-hoe::%uuid of {_p}%}%::mult}) * ({_b}/3)

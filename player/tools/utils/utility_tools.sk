@@ -1,0 +1,3 @@
+on load:
+    set {upgradable_tool} to nether star named "<#4CCFB6>Upgrade Skills" with lore "&8Main Utility" and "" and "&7Right-Click to open!"
+    set {tools_shop} to anvil named "<#AFCF3C>Upgrade Tools" with lore "&8Main Utility" and "" and "&7Right-Click to open!"

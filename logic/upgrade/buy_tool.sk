@@ -1,0 +1,10 @@
+function openUpgradeToolsMenu(p: player):
+    set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::upgradeTools}%"
+    set slot 13 of {_s} to diamond hoe named "%{lang::%{-language::%uuid of {_p}%}%::buyHoes}%"
+    open {_s} to {_p}
+
+function openHarvesterShop(p: player):
+    set {_s} to chest inventory with 5 rows named "%{lang::%{-language::%uuid of {_p}%}%::harvesterShop}%"
+    set slot 22 of {_s} to {hoes::%{-hoe::%uuid of {_p}%} + 1%} with lore {lang::%{-language::%uuid of {_p}%}%::requirements} and "<#8aed4c>Price:   $%{hoes::%{-hoe::%uuid of {_p}%} + 1%::price}%" and "<#edaa4c>Tokens: %{hoes::%{-hoe::%uuid of {_p}%} + 1%::tokens}%" and "<#edda4c>Level:   %{hoes::%{-hoe::%uuid of {_p}%} + 1%::level}%"
+    set slot 23 of {_s} to {hoes::%{-hoe::%uuid of {_p}%}%}
+    open {_s} to {_p}

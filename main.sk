@@ -1,0 +1,40 @@
+on load:
+    set {otimer} to 0
+
+every 5 seconds:
+    add 1 to {otimer}
+    loadWheat()
+
+    {otimer} is 6 # 30 seconds
+
+    loop all players:
+        saveVariableData(loop-player)
+        checkInventory(loop-player)
+        wait 1 tick
+
+    set {otimer} to 0
+
+function checkInventory(p: player):
+    set slot 0 of {_p}'s inventory to {hoes::%{-hoe::%uuid of {_p}%}%}
+    set slot 1 of {_p}'s inventory to air
+    set slot 2 of {_p}'s inventory to air
+    set slot 3 of {_p}'s inventory to air
+    set slot 4 of {_p}'s inventory to {upgradable_tool}
+    set slot 5 of {_p}'s inventory to air
+    set slot 6 of {_p}'s inventory to air
+    set slot 7 of {_p}'s inventory to air
+    set slot 8 of {_p}'s inventory to {tools_shop}
+
+on drop:
+    send "&c%{lang::%{-language::%uuid of player%}%::itemDrop}%" to player
+    cancel event
+
+on pickup:
+    cancel event
+
+on block break:
+    event-block is wheat
+    cancel event
+
+    if player is holding any of {hoes::*}:
+        breakWheat(event-player, position of event-block)
