@@ -19,11 +19,11 @@ function checkInventory(p: player):
     set slot 1 of {_p}'s inventory to air
     set slot 2 of {_p}'s inventory to air
     set slot 3 of {_p}'s inventory to air
-    set slot 4 of {_p}'s inventory to nether star named "<#4CCFB6>%{lang::%{-language::%uuid of player%}%::upgradeSkills}%" with lore "&8Main Utility" and "" and {lang::%{-language::%uuid of player%}%::rightclickopen}
+    set slot 4 of {_p}'s inventory to nether star named "<#4CCFB6>%{lang::%{-language::%uuid of {_p}%}%::upgradeSkills}%" with lore "&8Main Utility" and "" and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
     set slot 5 of {_p}'s inventory to air
     set slot 6 of {_p}'s inventory to air
     set slot 7 of {_p}'s inventory to air
-    set slot 8 of {_p}'s inventory to anvil named "<#AFCF3C>%{lang::%{-language::%uuid of player%}%::upgradeTools}%" with lore "&8Main Utility" and "" and {lang::%{-language::%uuid of player%}%::rightclickopen}
+    set slot 8 of {_p}'s inventory to anvil named "<#AFCF3C>%{lang::%{-language::%uuid of {_p}%}%::upgradeTools}%" with lore "&8Main Utility" and "" and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
 
 on drop:
     send "&c%{lang::%{-language::%uuid of player%}%::itemDrop}%" to player
