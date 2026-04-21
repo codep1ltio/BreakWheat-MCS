@@ -11,3 +11,12 @@ on load:
     set {lang::EN::buyHoes} to "Upgrade Harvester"
     set {lang::EN::harvesterShop} to "Harvester Shop"
     set {lang::EN::requirements} to "&8-- &7Requirements &8--"
+    set {lang::EN::comparison} to "&8-- &7Comparison &8--"
+    set {lang::EN::price} to "Price"
+    set {lang::EN::tokens} to "Tokens"
+    set {lang::EN::blast} to "Blast"
+    set {lang::EN::level} to "Level"
+    set {lang::EN::blocks} to "blocks"
+    set {lang::EN::mult} to "Mult" # multiplier
+    set {lang::EN::rightclickopen} to "&7Right-Click to open!"
+    set {lang::EN::upgradeSkills} to "Upgrade Skills"
