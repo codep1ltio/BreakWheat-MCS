@@ -5,7 +5,7 @@ every 5 seconds:
     add 1 to {otimer}
     loadWheat()
 
-    {otimer} is 6 # 30 seconds
+    {otimer} is 3 # 15 seconds
 
     loop all players:
         saveVariableData(loop-player)

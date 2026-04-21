@@ -1,0 +1,15 @@
+function shortNum(n: number) :: text:
+    set {_num} to {_n}
+    
+    if {_num} >= 1e15:
+        return "%round({_num} / 1e15, 2)%q"
+    else if {_num} >= 1e12:
+        return "%round({_num} / 1e12, 2)%t"
+    else if {_num} >= 1e9:
+        return "%round({_num} / 1e9, 2)%b"
+    else if {_num} >= 1e6:
+        return "%round({_num} / 1e6, 2)%m"
+    else if {_num} >= 1e3:
+        return "%round({_num} / 1e3, 2)%k"
+    
+    return "%{_num}%"

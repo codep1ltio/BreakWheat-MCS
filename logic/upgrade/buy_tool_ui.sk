@@ -47,7 +47,7 @@ function showAllHarvesters(p: player):
 
         else:
             set slot loop-number + 36 of {_s} to gray stained glass pane named " "
-            
+
     set slot 9 of {_s} to gray stained glass pane named " "
     set slot 18 of {_s} to gray stained glass pane named " "
     set slot 27 of {_s} to gray stained glass pane named " "
@@ -58,7 +58,7 @@ function showAllHarvesters(p: player):
     set slot 44 of {_s} to gray stained glass pane named " "
     
 
-
+    
     loop 45 times:
         slot loop-number of {_s} is air
         set slot loop-number of {_s} to {hoes::%{_hoheh}%}

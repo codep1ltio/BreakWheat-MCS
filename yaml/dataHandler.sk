@@ -4,6 +4,12 @@
 # save yml "data"
 # unload yml "data"
 
+placeholderapi placeholder with the prefix "skript":
+    if the identifier is "balance":
+        set the result to shortNum({-data::%uuid of player%::balance})
+    else if the identifier is "tokens":
+        set the result to {-token::%uuid of player%}
+
 on load:
     load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
 
