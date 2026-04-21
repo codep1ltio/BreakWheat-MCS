@@ -30,3 +30,7 @@ on load:
     set {lang::EN::minLevelReq2} to "to obtain this!"
     set {lang::EN::insufficientTokens} to "Insufficient Tokens"
     set {lang::EN::insufficientBalance} to "Insufficient Balance"
+    set {lang::EN::allHarvesters} to "All Harvesters"
+    set {lang::EN::previousPage} to "Previous Page"
+    set {lang::EN::nextPage} to "Next Page"
+    set {lang::EN::foundToken} to "You have found a token!"

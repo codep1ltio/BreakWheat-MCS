@@ -33,3 +33,7 @@ function breakWheat(p: player, loc: location):
 
     send action bar "&a+$%calculateBalance({_p}, {-wl::%uuid of {_p}%})% &8(&e$%calculateBalance({_p}, {_oo})%&8)" to {_p}
     addBalance({_p}, calculateBalance({_p}, {_oo}))
+
+    if chance of {-tokenChance::%uuid of {_p}%}:
+        send "&6%{lang::%{-language::%uuid of {_p}%}%::foundToken}% &8(&e%{-tokenChance::%uuid of {_p}%} * 10%%%&8)" to {_p}
+        addToken({_p}, 1)
