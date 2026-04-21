@@ -11,4 +11,4 @@ on load:
     set {lang::FI::upgradeTools} to "Päivitä työkalut"
     set {lang::FI::buyHoes} to "Päivitä kerääjä"
     set {lang::FI::harvesterShop} to "Kerääjän kauppa"
-    set {lang::FI::requirements} to "&8-- &Vaatimukset &8--"
+    set {lang::FI::requirements} to "&8-- &7Vaatimukset &8--"
