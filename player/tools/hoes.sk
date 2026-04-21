@@ -3,9 +3,6 @@ command giveHoe <player> <integer>:
     trigger:
         give {hoes::%arg-2%} to arg-1
 
-function giveHoe(p: player, i: integer):
-    give {hoes::%{_i}%} to {_p}
-
 on load:
     set {hoes::1} to unbreakable wooden hoe named "<#5c5730>Broken Harvester" with lore "&8Starter" and " " and "<#F48566>Blast: &f%{hoes::1::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::1::mult}%"
     set {hoes::1::blast} to 0

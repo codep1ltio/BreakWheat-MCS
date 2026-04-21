@@ -10,3 +10,10 @@ on inventory click:
     if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::upgradeTools}%":
         if event-slot is 14:
             openHarvesterShop(player)
+
+    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::harvesterShop}%":
+        if event-slot is 21:
+            confirmPurchase(player)
+        
+        #if event-slot is 23:
+        #    showAllHarvesters(player)

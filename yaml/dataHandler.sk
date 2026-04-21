@@ -147,3 +147,9 @@ function setLanguage(p: player, lang: text):
     set yml value "users.%uuid of {_p}%.lang" from "data" to {_lang}
     play sound "entity.experience_orb.pickup" with volume 1 and pitch 1 to {_p}
     saveVariableData({_p}, false)
+
+function setHoe(p: player, i: integer):
+    init({_p})
+    set yml value "users.%uuid of {_p}%.hoe" from "data" to {_i}
+    play sound "entity.experience_orb.pickup" with volume 1 and pitch 1 to {_p}
+    saveVariableData({_p}, false)

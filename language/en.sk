@@ -26,3 +26,7 @@ on load:
     set {lang::EN::mainUtility} to "Main Utility"
     set {lang::EN::purchase} to "Purchase"
     set {lang::EN::noConfirmation} to "There won't be confirmation."
+    set {lang::EN::minLevelReq} to "You need to be level"
+    set {lang::EN::minLevelReq2} to "to obtain this!"
+    set {lang::EN::insufficientTokens} to "Insufficient Tokens"
+    set {lang::EN::insufficientBalance} to "Insufficient Balance"
