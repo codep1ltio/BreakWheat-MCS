@@ -1,11 +1,11 @@
 function openSettingsLanguages(p: player):
     set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::settings}% - %{lang::%{-language::%uuid of {_p}%}%::languages}%"
 
-    set slot 0 of {_s} to (writable book) named "English (EN)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "EN" else " ")
-    set slot 1 of {_s} to (writable book) named "German (DE)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "DE" else " ")
-    set slot 2 of {_s} to (writable book) named "Finnish (FI)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "FI" else " ")
-    set slot 3 of {_s} to (writable book) named "Russian (RU)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "RU" else " ")
-    set slot 4 of {_s} to (writable book) named "Spanish (SPA)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "SPA" else " ")
+    set slot 0 of {_s} to (writable book) named "<#c5e8e3>English (EN)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "EN" else " ")
+    set slot 1 of {_s} to (writable book) named "<#c5e8e3>German (DE)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "DE" else " ")
+    set slot 2 of {_s} to (writable book) named "<#c5e8e3>Finnish (FI)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "FI" else " ")
+    set slot 3 of {_s} to (writable book) named "<#c5e8e3>Russian (RU)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "RU" else " ")
+    set slot 4 of {_s} to (writable book) named "<#c5e8e3>Spanish (SPA)" with lore ("&a&lSELECTED" if {-language::%uuid of {_p}%} is "SPA" else " ")
 
     set slot 26 of {_s} to barrier named "&c%{lang::%{-language::%uuid of {_p}%}%::return}%"
     open {_s} to {_p}
@@ -28,4 +28,4 @@ function settingsLanguageSelection(i: integer, p: player):
     if {_i} is 26:
         openSettings({_p})
 
-    saveVariableData({_p})
+    checkInventory({_p})

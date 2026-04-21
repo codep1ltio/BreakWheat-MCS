@@ -31,8 +31,10 @@ function saveVariableData(p: player, b: boolean = true):
     set {-data::%uuid of {_p}%::balance} to fetchBalance({_p})
     set {-language::%uuid of {_p}%} to fetchLanguage({_p})
     set {-multiplier::%uuid of {_p}%} to fetchMultiplier({_p})
+    set {-token::%uuid of {_p}%} to fetchTokens({_p})
     set {-speed::%uuid of {_p}%} to fetchSpeed({_p})
     set {-hoe::%uuid of {_p}%} to fetchHoe({_p})
+    set {-level::%uuid of {_p}%} to fetchLevel({_p})
 
     {_b} is true
     send action bar "%{lang::%{-language::%uuid of {_p}%}%::saved_variable_data}%" to {_p}
@@ -81,6 +83,9 @@ local function init(p: player):
     if yml path "users.%{_uuid}%.hoe" in "data" doesn't exist:
         set yml value "users.%{_uuid}%.hoe" from "data" to 1
 
+    if yml path "users.%{_uuid}%.level" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.level" from "data" to 0
+
     save()
 
 #   ====================================#   ====================================
@@ -112,12 +117,26 @@ function fetchHoe(p: player) :: number:
     init({_p})
     return (yml value "users.%uuid of {_p}%.hoe" from "data")
 
+function fetchLevel(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.level" from "data")
+
+function fetchTokens(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.tokens" from "data")
+
 #
 # ADD
 # ADD
 #
 function addBalance(p: player, amount: number):
     set yml value "users.%uuid of {_p}%.balance" from "data" to (fetchBalance({_p}) + {_amount})
+
+function addToken(p: player, amount: number):
+    set yml value "users.%uuid of {_p}%.tokens" from "data" to (fetchTokens({_p}) + {_amount})
+
+function addLevel(p: player, amount: number):
+    set yml value "users.%uuid of {_p}%.level" from "data" to (fetchLevel({_p}) + {_amount})
 
 #
 # SET

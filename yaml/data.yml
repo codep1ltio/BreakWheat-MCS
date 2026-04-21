@@ -1,9 +1,10 @@
 users:
     4002120a-88f4-4830-b464-b1768fc0de9f:
-        balance: 2956.0833333332316
+        balance: 2983.816666666558
         blast: 0
         tokens: 0
         lang: EN
         multiplier: 1
         speed: 0
         hoe: 2
+        level: 0

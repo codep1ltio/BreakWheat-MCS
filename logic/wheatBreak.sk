@@ -1,10 +1,12 @@
 on load:
+    clear {-wheatQueue::*}
     set {-wheatQueue::*} to location(0, 0, 0)
 
 function loadWheat():
     loop {-wheatQueue::*}:
         set block at loop-value to wheat[age=7]
         clear {-wheatQueue::%loop-index%}
+        clear {-wheatQueue::%loop-value%}
 
 function breakWheat(p: player, loc: location):
     if {timeSinceLastBreak::%uuid of {_p}%} is less than 3 seconds ago:
