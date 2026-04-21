@@ -21,3 +21,6 @@ on load:
     set {lang::EN::rightclickopen} to "&7Right-Click to open!"
     set {lang::EN::upgradeSkills} to "Upgrade Skills"
     set {lang::EN::viewallharvesters} to "View All Harvesters!"
+    set {lang::EN::upgradeAbility} to "Upgrade Ability"
+    set {lang::EN::usageUtility} to "Usage Utility"
+    set {lang::EN::mainUtility} to "Main Utility"

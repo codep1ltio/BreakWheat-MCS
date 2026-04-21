@@ -27,3 +27,5 @@ function settingsLanguageSelection(i: integer, p: player):
 
     if {_i} is 26:
         openSettings({_p})
+
+    saveVariableData({_p})

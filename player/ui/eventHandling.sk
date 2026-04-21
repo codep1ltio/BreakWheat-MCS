@@ -8,5 +8,5 @@ on inventory click:
         settingsLanguageSelection(index of event-slot, player)
 
     if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::upgradeTools}%":
-        if event-slot is 13:
+        if event-slot is 14:
             openHarvesterShop(player)

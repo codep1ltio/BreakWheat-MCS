@@ -23,14 +23,30 @@ on load:
     set {hoes::3::blast} to 0
     set {hoes::3::mult} to 1.1
 
+    set {hoes::3::price} to 1400
+    set {hoes::3::tokens} to 3
+    set {hoes::3::level} to 5
+
     set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::4::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::4::mult}%"
     set {hoes::4::blast} to 0
     set {hoes::4::mult} to 1.11
+
+    set {hoes::4::price} to 1800
+    set {hoes::4::tokens} to 5
+    set {hoes::4::level} to 10
 
     set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::5::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::5::mult}%"
     set {hoes::5::blast} to 0
     set {hoes::5::mult} to 1.13
 
+    set {hoes::5::price} to 2500
+    set {hoes::5::tokens} to 7
+    set {hoes::5::level} to 18
+
     set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::6::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::6::mult}%"
     set {hoes::6::blast} to 0
     set {hoes::6::mult} to 1.08
+
+    set {hoes::6::price} to 3100
+    set {hoes::6::tokens} to 9
+    set {hoes::6::level} to 25
