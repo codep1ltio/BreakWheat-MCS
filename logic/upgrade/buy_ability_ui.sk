@@ -6,7 +6,7 @@ function spinAbility(p: player):
 function openAbilityShop(p: player):
     set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::abilityShop}%"
     set slot 12 of {_s} to (lime stained glass pane) named "<#86e362>%{lang::%{-language::%uuid of {_p}%}%::spinfor}% <#edaa4c>2 %{lang::%{-language::%uuid of {_p}%}%::tokens}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::noConfirmation}%" and "&8%{lang::%{-language::%uuid of {_p}%}%::willReplaceAbility}%" and "" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::requiredlevel}%: 5 &8(<#edda4c>%{-level::%uuid of {_p}%}%&8)"
-    set slot 13 of {_s} to {-ability::%{-abilities::%uuid of {_p}%}%} named "%name of {-ability::%{-abilities::%uuid of {_p}%}%}% &8[<#d9c032>%{lang::%{-language::%uuid of {_p}%}%::thisisyourability}%&8]" with lore "<#d9c032>Rarity: %{-ability::%{-abilities::%uuid of {_p}%}%::rarity}%"
+    set slot 13 of {_s} to {ability::%{-abilities::%uuid of {_p}%}%} named "%name of {ability::%{-abilities::%uuid of {_p}%}%}% &8[<#d9c032>%{lang::%{-language::%uuid of {_p}%}%::thisisyourability}%&8]" with lore "<#d9c032>Rarity: %{-ability::%{-abilities::%uuid of {_p}%}%::rarity}%"
     set slot 14 of {_s} to nether star named "<#4cd8ed>%{lang::%{-language::%uuid of {_p}%}%::viewAllAbilities}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::usageUtility}%" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
     open {_s} to {_p}
 

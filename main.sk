@@ -1,3 +1,6 @@
+on block trample:
+    cancel event
+
 on load:
     set {otimer} to 0
 
@@ -23,7 +26,7 @@ every 5 seconds:
     set {otimer} to 0
 
 function checkInventory(p: player):
-    set {_p}'s offhand item to {-ability::%{-abilities::%uuid of {_p}%}%}
+    set {_p}'s offhand item to {ability::%{-abilities::%uuid of {_p}%}%}
     set slot 0 of {_p}'s inventory to {hoes::%{-hoe::%uuid of {_p}%}%}
     set slot 1 of {_p}'s inventory to air
     set slot 2 of {_p}'s inventory to air

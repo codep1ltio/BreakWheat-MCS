@@ -20,7 +20,7 @@ function getTargetObject(p: player, dist: int = 25) :: location:
             set {_x} to x of {_p} + (sin({_yaw}) * -1) * {_dist}
             set {_z} to z of {_p} + cos({_yaw}) * {_dist}
 
-    set {_strikeY} to y of highest block at location({_x}, 64, {_z}, world of {_p})
+    set {_strikeY} to y of highest block at location({_x}, 0, {_z}, world of {_p})
 
     breakWheat({_p}, location({_x}, {_strikeY} + 1, {_z}))
     return location({_x}, {_strikeY} + 1, {_z})
