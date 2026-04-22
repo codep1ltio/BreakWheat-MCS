@@ -18,7 +18,7 @@ on load:
     set {lang::DE::blast} to "Reichweite"
     set {lang::DE::level} to "Stufe"
     set {lang::DE::blocks} to "Blöcke"
-    set {lang::DE::mult} to "Multiplikator"
+    set {lang::DE::mult} to "Mult"
     set {lang::DE::rightclickopen} to "&7Rechtsklick zum Öffnen!"
     set {lang::DE::upgradeSkills} to "Fähigkeiten verbessern"
     set {lang::DE::viewallharvesters} to "Alle Ernter ansehen!"
