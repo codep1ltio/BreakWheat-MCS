@@ -22,7 +22,7 @@ function loadAbilities():
     set {ability::3::rarity} to "<#3881c9>Rare"
 
     set {ability::4} to amethyst shard with glint named "<#c938a3>Orbital Strike" with lore "&8%{ability::4::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::4::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at the target object and" and "<#f0eec5>Shift + Right Click with your harvester."
-    set {ability::4::cooldown} to 2 minutes
+    set {ability::4::cooldown} to 1 minute
     set {ability::4::rarity} to "<#aa38c9>Master"
 
     set {ability::5} to fire charge with glint named "<#ed9e4e>Meteor Shower" with lore "&8%{ability::5::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::5::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."

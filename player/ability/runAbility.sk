@@ -9,7 +9,7 @@ function runAbility(p: player):
         abilityLightningStorm({_p})
 
     else if {-abilities::%uuid of {_p}%} is 4:
-        abilityOrbitalStrike({_p}, 30 seconds)
+        abilityOrbitalStrike({_p}, 20 seconds)
 
     else if {-abilities::%uuid of {_p}%} is 5:
         abilityMeteorShower({_p})

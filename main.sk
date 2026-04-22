@@ -45,7 +45,8 @@ on pickup:
     cancel event
 
 on right click:
-    cancel event
+    if player is not op:
+        cancel event
     if {slsk::%uuid of player%} is not set:
         set {slsk::%uuid of player%} to now
     {slsk::%uuid of player%} is less than 0.5 second ago
@@ -70,8 +71,14 @@ on right click:
                 send "<#e84c41>%{lang::%{-language::%uuid of player%}%::abilityOnCooldown}%" to player
 
 on block break:
+    if event-block is not wheat:
+        if player is not op:
+            cancel event
+
+on block break:
     event-block is wheat
-    cancel event
+    if player is not op:
+        cancel event
 
     if player is holding any of {hoes::*}:
         breakWheat(event-player, position of event-block)
