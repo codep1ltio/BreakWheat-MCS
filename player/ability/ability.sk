@@ -4,6 +4,9 @@ command loadAbilities:
     trigger:
         loadAbilities()
 
+on load:
+    loadAbilities()
+
 function loadAbilities():
 
     set {ability::1} to feather named "<#d1d1d1>Dash" with lore "&8%{ability::1::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::1::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at your desired direction and" and "<#f0eec5>Shift + Right Click with your harvester."
