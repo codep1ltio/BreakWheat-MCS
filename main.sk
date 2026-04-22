@@ -1,6 +1,14 @@
 on load:
     set {otimer} to 0
 
+every 2 seconds:
+    loop all players:
+        doAbilityEffect(loop-player)
+        {slska::%uuid of loop-player%::sent} is false 
+        if {slska::%uuid of loop-player%} is less than {-ability::%{-abilities::%uuid of loop-player%}%::cooldown} ago:
+            set {slska::%uuid of loop-player%::sent} to true
+            send "<#58db74>%{lang::%{-language::%uuid of loop-player%}%::abilityCooldownFinish}%" to loop-player
+
 every 5 seconds:
     add 1 to {otimer}
     loadWheat()
@@ -15,6 +23,7 @@ every 5 seconds:
     set {otimer} to 0
 
 function checkInventory(p: player):
+    set {_p}'s offhand item to {-ability::%{-abilities::%uuid of {_p}%}%}
     set slot 0 of {_p}'s inventory to {hoes::%{-hoe::%uuid of {_p}%}%}
     set slot 1 of {_p}'s inventory to air
     set slot 2 of {_p}'s inventory to air
@@ -33,8 +42,29 @@ on pickup:
     cancel event
 
 on right click:
+    cancel event
+    if {slsk::%uuid of player%} is not set:
+        set {slsk::%uuid of player%} to now
+    {slsk::%uuid of player%} is less than 0.5 second ago
+    set {slsk::%uuid of player%} to now
+    
     if player's hotbar slot is 8:
         openUpgradeToolsMenu(player)
+
+    if player's hotbar slot is 0:
+        if player is sneaking:
+            # cooldown sys
+            if {slska::%uuid of player%} is not set:
+                set {slska::%uuid of player%} to now
+
+            if {slska::%uuid of player%} is less than {ability::%{-abilities::%uuid of player%}%::cooldown} ago:
+                set {slska::%uuid of player%} to now
+                set {slska::%uuid of player%::sent} to false 
+
+                send "<#b5b59a>%{lang::%{-language::%uuid of player%}%::usingAbility}% %name of {ability::%{-abilities::%uuid of player%}%}%" to player
+                runAbility(player)
+            else:
+                send "<#e84c41>%{lang::%{-language::%uuid of player%}%::abilityOnCooldown}%" to player
 
 on block break:
     event-block is wheat

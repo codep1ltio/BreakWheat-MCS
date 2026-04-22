@@ -1,0 +1,12 @@
+function abilityShockwave(p: player):
+
+    set {_RAD} to {-abilitySkill::%uuid of {_p}%} + 2
+    create a fake explosion at {_p}
+
+    loop {_RAD} times:
+
+        loop all blocks in radius (loop-number) of {_p}:
+            loop-block is wheat
+
+            breakWheat({_p}, location of loop-block)
+        wait 1 tick

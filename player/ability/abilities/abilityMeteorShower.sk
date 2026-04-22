@@ -1,0 +1,40 @@
+function abilityMeteorShower(p: player):
+    set {_height} to 30.0
+
+    set {_size} to {-abilitySkill::%uuid of {_p}%} + 5
+    set {_meteors} to {-abilitySkill::%uuid of {_p}%} + 12
+
+    set {_loc} to position of {_p}
+    set {_sw} to random number between -1 and 1
+    set {_fs} to 3 + {_sw}
+
+    loop {_meteors} times:
+        set Y of {_loc} to ((y of {_loc}) + {_height}) + random integer between 0 and 20
+
+        # just simple meteor offset so it doesnt land on the same place everytime
+        add (random integer between -15 and (15 + {_size})) to x of {_loc}
+        add (random integer between -15 and (15 + {_size})) to z of {_loc}
+
+        set {_dist} to {_height} / {_fs}
+
+        subtract {_sw} * {_dist} from x of {_loc}
+        subtract {_sw} * {_dist} from z of {_loc}
+
+        while y of {_loc} is higher than y of {_p}:
+            draw the shape (sphere with radius (0.3 + ({_size} / 10))) at {_loc}
+            
+            subtract {_fs} from y of {_loc}
+
+            add {_sw} to x of {_loc}
+            add {_sw} to z of {_loc}
+
+            wait 1 tick
+        create a fake explosion at {_loc}
+
+        loop all blocks in radius {_size} + 2 of {_loc}:
+            loop-block is wheat
+
+            breakWheat({_p}, location of loop-block)
+
+        wait 10 ticks
+        set {_loc} to position of {_p}

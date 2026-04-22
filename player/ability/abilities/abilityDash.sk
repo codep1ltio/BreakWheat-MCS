@@ -1,0 +1,2 @@
+function abilityDash(p: player):
+    push {_p} forward with force {-abilitySkill::%uuid of {_p}%}

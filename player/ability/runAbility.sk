@@ -1,0 +1,15 @@
+function runAbility(p: player):
+    if {-abilities::%uuid of {_p}%} is 1:
+        abilityDash({_p})
+
+    else if {-abilities::%uuid of {_p}%} is 2:
+        abilityShockwave({_p})
+
+    else if {-abilities::%uuid of {_p}%} is 3:
+        abilityLightningStorm({_p})
+
+    else if {-abilities::%uuid of {_p}%} is 4:
+        abilityOrbitalStrike({_p}, 30 seconds)
+
+    else if {-abilities::%uuid of {_p}%} is 5:
+        abilityMeteorShower({_p})

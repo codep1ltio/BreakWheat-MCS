@@ -1,0 +1,49 @@
+local function lightning(startpos: location, endpos: location):
+    set {_loc} to {_startpos}
+    set {_lastpos} to {_loc}
+
+    while y of {_loc} is higher than y of {_endpos}:
+
+        subtract (random integer between 1 and 2) from y of {_loc}
+        
+        add (random number between -0.6 and 0.6) to x of {_loc}
+        add (random number between -0.6 and 0.6) to z of {_loc}
+
+        set {_line} to a line from {_lastpos} to {_loc}
+        draw the shape {_line} at {_lastpos}
+        set {_lastpos} to {_loc}
+
+function abilityLightningStorm(p: player):
+    set {_t} to 30 seconds
+    set {_skill} to {-abilitySkill::%uuid of {_p}%}
+    if {_skill} is not set:
+        set {_skill} to 0
+
+    set {_size} to {_skill} + 10
+
+    set {_loc} to getTargetObject({_p})
+
+    add ({_size} + 3) to y of {_loc}
+
+    set {_end} to now + {_t}
+    while now < {_end}:
+        draw {_size}+15 of dust using dustOption(gray, 50) at {_loc} with offset vector((random number between ({_size}*-1) and {_size}), (random number between 0 and 1), (random number between ({_size}*-1) and {_size}))
+        
+        set {_yloc} to {_loc}
+        subtract {_size}+10 from y of {_yloc}
+
+        if chance of 7.5%:
+            set {_Lloc} to {_loc}
+            add (random integer between ((({_size}/2)-1)*-1) and (({_size}/2)-1)) to x of {_Lloc}
+            add (random integer between ((({_size}/2)-1)*-1) and (({_size}/2)-1)) to z of {_Lloc}
+
+            lightning({_Lloc}, {_yloc})
+            play sound "entity.lightning_bolt.thunder" with volume 2 and pitch 1 at {_yloc}
+
+        loop all blocks in radius ({_size}) of {_yloc}:
+            loop-block is wheat
+
+            if chance of 5%:
+                breakWheat({_p}, location of loop-block)
+
+        wait 3 ticks

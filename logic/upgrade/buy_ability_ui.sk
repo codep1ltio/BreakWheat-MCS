@@ -1,0 +1,63 @@
+function spinAbility(p: player):
+    set {_a} to random integer between 1 and 4
+
+    setAbility({_p}, {_a})
+
+function openAbilityShop(p: player):
+    set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::abilityShop}%"
+    set slot 12 of {_s} to (lime stained glass pane) named "<#86e362>%{lang::%{-language::%uuid of {_p}%}%::spinfor}% <#edaa4c>2 %{lang::%{-language::%uuid of {_p}%}%::tokens}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::noConfirmation}%" and "&8%{lang::%{-language::%uuid of {_p}%}%::willReplaceAbility}%" and "" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::requiredlevel}%: 5 &8(<#edda4c>%{-level::%uuid of {_p}%}%&8)"
+    set slot 13 of {_s} to {-ability::%{-abilities::%uuid of {_p}%}%} named "%name of {-ability::%{-abilities::%uuid of {_p}%}%}% &8[<#d9c032>%{lang::%{-language::%uuid of {_p}%}%::thisisyourability}%&8]" with lore "<#d9c032>Rarity: %{-ability::%{-abilities::%uuid of {_p}%}%::rarity}%"
+    set slot 14 of {_s} to nether star named "<#4cd8ed>%{lang::%{-language::%uuid of {_p}%}%::viewAllAbilities}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::usageUtility}%" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
+    open {_s} to {_p}
+
+function confirmAbilityPurchase(p: player):
+
+    if {-token::%uuid of {_p}%} is higher or equal to 2:
+        if {-level::%uuid of {_p}%} is higher or equal to 5:
+
+            addToken({_p}, -2)
+    
+            spinAbility({_p})
+
+            checkInventory({_p})
+            openAbilityShop({_p})
+        else:
+            send "&c%{lang::%{-language::%uuid of {_p}%}%::minLevelReq}% &e5 &c%{lang::%{-language::%uuid of {_p}%}%::minLevelReq2}%" to {_p}
+    else:
+        send "&c%{lang::%{-language::%uuid of {_p}%}%::insufficientTokens}%" to {_p}
+
+function showAllAbilities(p: player):
+    set {_s} to chest inventory with 5 rows named "%{lang::%{-language::%uuid of {_p}%}%::allAbilities}%"
+    set {_hoheh} to 1
+    loop 9 times:
+        set slot loop-number - 1 of {_s} to gray stained glass pane named " "
+    loop 7 times:
+        if loop-number is 3:
+            set slot loop-number + 36 of {_s} to arrow named "<#d6be54>%{lang::%{-language::%uuid of {_p}%}%::previousPage}%"
+        
+        else if loop-number is 4:
+            set slot loop-number + 36 of {_s} to barrier named "<#d65454>%{lang::%{-language::%uuid of {_p}%}%::return}%"
+
+        else if loop-number is 5:
+            set slot loop-number + 36 of {_s} to arrow named "<#76d654>%{lang::%{-language::%uuid of {_p}%}%::nextPage}%"
+
+        else:
+            set slot loop-number + 36 of {_s} to gray stained glass pane named " "
+
+    set slot 9 of {_s} to gray stained glass pane named " "
+    set slot 18 of {_s} to gray stained glass pane named " "
+    set slot 27 of {_s} to gray stained glass pane named " "
+    set slot 36 of {_s} to gray stained glass pane named " "
+    set slot 17 of {_s} to gray stained glass pane named " "
+    set slot 26 of {_s} to gray stained glass pane named " "
+    set slot 35 of {_s} to gray stained glass pane named " "
+    set slot 44 of {_s} to gray stained glass pane named " "
+    
+
+    
+    loop 45 times:
+        slot loop-number of {_s} is air
+        set slot loop-number of {_s} to {ability::%{_hoheh}%}
+        add 1 to {_hoheh}
+
+    open {_s} to {_p}

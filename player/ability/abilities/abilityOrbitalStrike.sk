@@ -1,0 +1,62 @@
+local function OrbitalStrike(p: player, loc: location, dur: timespan):
+    set {_end} to now + {_dur}
+
+    set {_startpoint} to {_loc}
+    add 500 to y of {_startpoint}
+    add 150 to x of {_startpoint}
+    add 100 to z of {_startpoint}
+
+    set {_size} to 0
+    set {_blocks} to 0
+
+    set {_particleshape} to a line from {_startpoint} to {_loc}
+    wait 2 seconds
+    
+    draw the shape {_particleshape} at {_startpoint}
+
+    while now < {_end}:
+        play sound "block.beacon.ambient" with volume 15 and pitch 2 at {_loc}
+        
+        loop all blocks in radius ({_size}) of {_loc}:
+            loop-block is wheat
+
+            breakWheat({_p}, location of loop-block)
+
+        # particles at the ground
+        draw 50 of dust using dustOption(gray, 50) at {_loc} with offset vector((random number between -10 and 10), (random number between 2 and 3), (random number between -10 and 10))
+        
+        # the beam
+        draw the shape {_particleshape} at {_startpoint}
+
+        wait 1 second
+        add 1 to {_size}
+
+function abilityOrbitalStrike(p: player, duration: timespan):
+    set {_maxDistance} to 25
+
+    set {_targetBlock} to target block of {_p}
+    set {_targetEntity} to target entity of {_p}
+    
+    if {_targetEntity} is set:
+        if distance between location of {_p} and location of {_targetEntity} <= {_maxDistance}:
+            set {_x} to x of location of {_targetEntity}
+            set {_z} to z of location of {_targetEntity}
+    else:
+        if {_targetBlock} is set:
+            if distance between location of {_p} and location of {_targetBlock} <= {_maxDistance}:
+                set {_x} to x of location of {_targetBlock}
+                set {_z} to z of location of {_targetBlock}
+            else:
+                set {_yaw} to yaw of {_p}
+                set {_x} to x of {_p} + (sin({_yaw}) * -1) * {_maxDistance}
+                set {_z} to z of {_p} + cos({_yaw}) * {_maxDistance}
+        else:
+            set {_yaw} to yaw of {_p}
+            set {_x} to x of {_p} + (sin({_yaw}) * -1) * {_maxDistance}
+            set {_z} to z of {_p} + cos({_yaw}) * {_maxDistance}
+
+    set {_strikeY} to y of highest block at location({_x}, 64, {_z}, world of {_p})
+
+    breakWheat({_p}, location({_x}, {_strikeY} + 1, {_z}, world of {_p}))
+    
+    OrbitalStrike({_p}, location({_x}, {_strikeY} + 1, {_z}, world of {_p}), {_duration})

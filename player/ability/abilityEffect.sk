@@ -1,0 +1,15 @@
+local function tinyMeteorShower(p: player):
+    set {_loc} to location of {_p}
+    set {_y} to y of {_loc} + 2
+    set {_x} to (x of {_loc} + random number between -1 and 1) - 0.4
+    set {_z} to (z of {_loc} + random number between -1 and 1) - 0.4
+    loop 6 times:
+        draw the shape (sphere with radius 0.15) at location({_x}, {_y}, {_z})
+        add 0.1 to {_x}
+        add 0.1 to {_z}
+        subtract 0.3 from {_y}
+        wait 3 ticks
+
+function doAbilityEffect(p: player):
+    if {-abilities::%uuid of {_p}%} is 5:
+        tinyMeteorShower({_p})

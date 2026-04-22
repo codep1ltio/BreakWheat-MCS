@@ -10,7 +10,7 @@ on load:
 
 
 
-    set {hoes::2} to unbreakable wooden hoe named "<#5e502d>Rotted Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::2::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::2::mult}%"
+    set {hoes::2} to unbreakable wooden hoe named "<#5e502d>Rotted Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::2::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::2::mult}%"
     set {hoes::2::blast} to 0
     set {hoes::2::mult} to 1.08
     
@@ -20,7 +20,7 @@ on load:
 
 
 
-    set {hoes::3} to unbreakable wooden hoe named "<#cf7f29>Rusted Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::3::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::3::mult}%"
+    set {hoes::3} to unbreakable wooden hoe named "<#cf7f29>Rusted Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::3::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::3::mult}%"
     set {hoes::3::blast} to 0
     set {hoes::3::mult} to 1.1
 
@@ -30,7 +30,7 @@ on load:
 
 
 
-    set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::4::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::4::mult}%"
+    set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::4::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::4::mult}%"
     set {hoes::4::blast} to 0
     set {hoes::4::mult} to 1.11
 
@@ -40,7 +40,7 @@ on load:
 
 
 
-    set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::5::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::5::mult}%"
+    set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::5::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::5::mult}%"
     set {hoes::5::blast} to 0
     set {hoes::5::mult} to 1.13
 
@@ -50,7 +50,7 @@ on load:
 
 
 
-    set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::6::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::6::mult}%"
+    set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::6::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::6::mult}%"
     set {hoes::6::blast} to 0
     set {hoes::6::mult} to 1.15
 
@@ -60,7 +60,7 @@ on load:
 
 
 
-    set {hoes::7} to unbreakable wooden hoe named "<#ffe030>Sun Dried Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::7::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::7::mult}%"
+    set {hoes::7} to unbreakable wooden hoe named "<#ffe030>Sun Dried Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::7::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::7::mult}%"
     set {hoes::7::blast} to 0
     set {hoes::7::mult} to 1.18
 
@@ -70,7 +70,7 @@ on load:
 
 
     # dont forget to change the value on the lore
-    set {hoes::8} to unbreakable wooden hoe named "<#b59567>Artificial Wooden Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::8::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::8::mult}%"
+    set {hoes::8} to unbreakable wooden hoe named "<#b59567>Artificial Wooden Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::8::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::8::mult}%"
     set {hoes::8::blast} to 0
     set {hoes::8::mult} to 1.2
 
@@ -79,7 +79,7 @@ on load:
     set {hoes::8::level} to 35
 
     # dont forget to change the value on the lore
-    set {hoes::9} to unbreakable wooden hoe named "<#d69554>Pressed Wood Harvester" with lore "&8Beginner" and " " and "<#F48566>Blast: &f%{hoes::9::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::9::mult}%"
+    set {hoes::9} to unbreakable wooden hoe named "<#d69554>Pressed Wood Harvester" with lore "&8Common" and " " and "<#F48566>Blast: &f%{hoes::9::blast} + 1% block" and "<#45CF30>Mult: &fx%{hoes::9::mult}%"
     set {hoes::9::blast} to 0
     set {hoes::9::mult} to 1.25
 

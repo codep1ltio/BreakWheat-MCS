@@ -42,6 +42,8 @@ function saveVariableData(p: player, b: boolean = true):
     set {-hoe::%uuid of {_p}%} to fetchHoe({_p})
     set {-level::%uuid of {_p}%} to fetchLevel({_p})
     set {-tokenChance::%uuid of {_p}%} to fetchTokenChance({_p})
+    set {-abilitySkill::%uuid of {_p}%} to fetchAbilitySkill({_p})
+    set {-abilities::%uuid of {_p}%} to fetchAbility({_p})
 
     {_b} is true
     send action bar "%{lang::%{-language::%uuid of {_p}%}%::saved_variable_data}%" to {_p}
@@ -96,6 +98,12 @@ local function init(p: player):
     if yml path "users.%{_uuid}%.tokenChance" in "data" doesn't exist:
         set yml value "users.%{_uuid}%.tokenChance" from "data" to 0.001
 
+    if yml path "users.%{_uuid}%.abilitySkill" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.abilitySkill" from "data" to 1
+
+    if yml path "users.%{_uuid}%.ability" in "data" doesn't exist:
+        set yml value "users.%{_uuid}%.ability" from "data" to 1
+
     save()
 
 #   ====================================#   ====================================
@@ -139,6 +147,14 @@ function fetchTokenChance(p: player) :: number:
     init({_p})
     return (yml value "users.%uuid of {_p}%.tokenChance" from "data")
 
+function fetchAbilitySkill(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.abilitySkill" from "data")
+
+function fetchAbility(p: player) :: number:
+    init({_p})
+    return (yml value "users.%uuid of {_p}%.ability" from "data")
+
 #
 # ADD // REMOVE
 # ADD // REMOVE
@@ -165,5 +181,11 @@ function setLanguage(p: player, lang: text):
 function setHoe(p: player, i: integer):
     init({_p})
     set yml value "users.%uuid of {_p}%.hoe" from "data" to {_i}
+    play sound "entity.experience_orb.pickup" with volume 1 and pitch 1 to {_p}
+    saveVariableData({_p}, false)
+
+function setAbility(p: player, i: integer):
+    init({_p})
+    set yml value "users.%uuid of {_p}%.ability" from "data" to {_i}
     play sound "entity.experience_orb.pickup" with volume 1 and pitch 1 to {_p}
     saveVariableData({_p}, false)
