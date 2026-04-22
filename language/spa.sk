@@ -18,7 +18,7 @@ on load:
     set {lang::SPA::blast} to "Radio"
     set {lang::SPA::level} to "Nivel"
     set {lang::SPA::blocks} to "Bloques"
-    set {lang::SPA::mult} to "Multiplicador"
+    set {lang::SPA::mult} to "Mult"
     set {lang::SPA::rightclickopen} to "&7¡Clic derecho para abrir!"
     set {lang::SPA::upgradeSkills} to "Mejorar Habilidades"
     set {lang::SPA::viewallharvesters} to "¡Ver todos los Cosechadores!"
