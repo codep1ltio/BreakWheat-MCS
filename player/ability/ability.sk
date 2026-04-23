@@ -26,7 +26,7 @@ function loadAbilities():
     set {ability::4::rarity} to "<#aa38c9>Master"
 
     set {ability::5} to fire charge with glint named "<#ed9e4e>Meteor Shower" with lore "&8%{ability::5::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::5::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."
-    set {ability::5::cooldown} to 40 seconds 
+    set {ability::5::cooldown} to 1 minute
     set {ability::5::rarity} to "<#FF4D4D>Grandmaster"
 
     # possibly 100 more

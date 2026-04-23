@@ -1,5 +1,5 @@
 function spinAbility(p: player):
-    set {_a} to random integer between 1 and 4
+    set {_a} to random integer between 1 and 5
 
     setAbility({_p}, {_a})
 

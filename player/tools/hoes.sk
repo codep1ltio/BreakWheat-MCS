@@ -14,9 +14,9 @@ on load:
     set {hoes::2::blast} to 0
     set {hoes::2::mult} to 1.08
     
-    set {hoes::2::price} to 1000
+    set {hoes::2::price} to 1350
     set {hoes::2::tokens} to 1
-    set {hoes::2::level} to 3
+    set {hoes::2::level} to 4
 
 
 
@@ -45,7 +45,7 @@ on load:
     set {hoes::5::mult} to 1.13
 
     set {hoes::5::price} to 2500
-    set {hoes::5::tokens} to 7
+    set {hoes::5::tokens} to 5
     set {hoes::5::level} to 18
 
 
@@ -55,7 +55,7 @@ on load:
     set {hoes::6::mult} to 1.15
 
     set {hoes::6::price} to 3100
-    set {hoes::6::tokens} to 9
+    set {hoes::6::tokens} to 6
     set {hoes::6::level} to 25
 
 
@@ -65,7 +65,7 @@ on load:
     set {hoes::7::mult} to 1.18
 
     set {hoes::7::price} to 3750
-    set {hoes::7::tokens} to 12
+    set {hoes::7::tokens} to 6
     set {hoes::7::level} to 30
 
 
@@ -75,7 +75,7 @@ on load:
     set {hoes::8::mult} to 1.2
 
     set {hoes::8::price} to 4075
-    set {hoes::8::tokens} to 13
+    set {hoes::8::tokens} to 6
     set {hoes::8::level} to 35
 
     # dont forget to change the value on the lore
@@ -84,5 +84,5 @@ on load:
     set {hoes::9::mult} to 1.25
 
     set {hoes::9::price} to 4200
-    set {hoes::9::tokens} to 14
+    set {hoes::9::tokens} to 6
     set {hoes::9::level} to 40

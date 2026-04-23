@@ -1,0 +1,6 @@
+function levelCheck(p: player):
+    if {points::%uuid of {_p}%} is higher or equal to {pointsReq::%uuid of {_p}%}:
+        remove {pointsReq::%uuid of {_p}%} from {points::%uuid of {_p}%}
+        set {pointsReq::%uuid of {_p}%} to {pointsReq::%uuid of {_p}%} * 1.1
+
+        addLevel({_p}, 1)

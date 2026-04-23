@@ -21,6 +21,7 @@ function breakWheat(p: player, loc: location):
         set {_oo} to 1
         add {_loc} to {-wheatQueue::*}
         add 1 to {-wl::%uuid of {_p}%}
+        add (1 * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) to {points::%uuid of {_p}%}
     
     else:
         loop blocks in radius ({-data::%uuid of {_p}%::blast} + {hoes::%{-hoe::%uuid of {_p}%}%::blast}) of {_loc}:
@@ -30,6 +31,7 @@ function breakWheat(p: player, loc: location):
             add location of loop-block to {-wheatQueue::*}
             add 1 to {-wl::%uuid of {_p}%}
             add 1 to {_oo}
+            add (1 * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) to {points::%uuid of {_p}%}
 
     send action bar "&a+$%calculateBalance({_p}, {-wl::%uuid of {_p}%})% &8(&e$%calculateBalance({_p}, {_oo})%&8)" to {_p}
     addBalance({_p}, calculateBalance({_p}, {_oo}))

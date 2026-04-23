@@ -9,6 +9,12 @@ placeholderapi placeholder with the prefix "skript":
         set the result to shortNum({-data::%uuid of player%::balance})
     else if the identifier is "tokens":
         set the result to {-token::%uuid of player%}
+    else if the identifier is "levelprogress":
+        set the result to ({points::%uuid of player%} / {pointsReq::%uuid of player%}) * 100
+    else if the identifier is "points":
+        set the result to "<#e3d956>%{points::%uuid of player%}% &8/ <#98de5b>%{pointsReq::%uuid of player%}%"
+    else if the identifier is "level":
+        set the result to {-level::%uuid of player%}
 
 on load:
     load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
@@ -29,6 +35,13 @@ command reloadyml:
 #   ---------------------------------------------------
 #   ---------------------------------------------------
 
+command resetLevel <player>:
+    permission: op
+    trigger:
+        set {points::%uuid of arg-1%} to 1
+        set {pointsReq::%uuid of arg-1%} to 250
+        setLevel(arg-1, 1)
+
 function saveVariableData(p: player, b: boolean = true):
 
     {_p} is a player
@@ -44,6 +57,11 @@ function saveVariableData(p: player, b: boolean = true):
     set {-tokenChance::%uuid of {_p}%} to fetchTokenChance({_p})
     set {-abilitySkill::%uuid of {_p}%} to fetchAbilitySkill({_p})
     set {-abilities::%uuid of {_p}%} to fetchAbility({_p})
+
+    if {points::%uuid of {_p}%} is not set:
+        set {points::%uuid of {_p}%} to 1
+    else if {pointsReq::%uuid of {_p}%} is not set:
+        set {pointsReq::%uuid of {_p}%} to 250
 
     {_b} is true
     send action bar "%{lang::%{-language::%uuid of {_p}%}%::saved_variable_data}%" to {_p}
@@ -93,7 +111,7 @@ local function init(p: player):
         set yml value "users.%{_uuid}%.hoe" from "data" to 1
 
     if yml path "users.%{_uuid}%.level" in "data" doesn't exist:
-        set yml value "users.%{_uuid}%.level" from "data" to 0
+        set yml value "users.%{_uuid}%.level" from "data" to 1
 
     if yml path "users.%{_uuid}%.tokenChance" in "data" doesn't exist:
         set yml value "users.%{_uuid}%.tokenChance" from "data" to 0.001
@@ -172,6 +190,11 @@ function addLevel(p: player, amount: number):
 # SET
 # SET
 #
+function setLevel(p: player, i: int):
+    init({_p})
+    set yml value "users.%uuid of {_p}%.level" from "data" to {_i}
+    saveVariableData({_p}, false)
+
 function setLanguage(p: player, lang: text):
     init({_p})
     set yml value "users.%uuid of {_p}%.lang" from "data" to {_lang}

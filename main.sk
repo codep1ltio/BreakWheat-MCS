@@ -6,9 +6,11 @@ on load:
 
 every 2 seconds:
     loop all players:
+        levelCheck(loop-player)
         doAbilityEffect(loop-player)
+
         {slska::%uuid of loop-player%::sent} is false 
-        if {slska::%uuid of loop-player%} is less than {-ability::%{-abilities::%uuid of loop-player%}%::cooldown} ago:
+        if {slska::%uuid of loop-player%} is less than {ability::%{-abilities::%uuid of loop-player%}%::cooldown} ago:
             set {slska::%uuid of loop-player%::sent} to true
             send "<#58db74>%{lang::%{-language::%uuid of loop-player%}%::abilityCooldownFinish}%" to loop-player
 
