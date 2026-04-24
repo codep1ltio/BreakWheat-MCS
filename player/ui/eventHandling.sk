@@ -4,33 +4,39 @@ on inventory click:
         if event-slot is 15:
             openSettingsLanguages(player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::settings}% - %{lang::%{-language::%uuid of player%}%::languages}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::settings}% - %{lang::%{-language::%uuid of player%}%::languages}%":
         settingsLanguageSelection(index of event-slot, player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::upgradeTools}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::upgradeTools}%":
         if event-slot is 14:
             openHarvesterShop(player)
-        if event-slot is 12:
+        else if event-slot is 12:
             openAbilityShop(player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::harvesterShop}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::harvesterShop}%":
         if event-slot is 12:
             confirmPurchase(player)
         
-        if event-slot is 14:
+        else if event-slot is 14:
             showAllHarvesters(player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::allHarvesters}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::allHarvesters}%":
         if event-slot is 40:
             openHarvesterShop(player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::abilityShop}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::abilityShop}%":
         if event-slot is 12:
             confirmAbilityPurchase(player)
 
-        if event-slot is 14:
+        else if event-slot is 14:
             showAllAbilities(player)
 
-    if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::allAbilities}%":
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::allAbilities}%":
         if event-slot is 40:
             openAbilityShop(player)
+
+    else if name of event-inventory is "%{lang::%{-language::%uuid of player%}%::skillsUpgrade}%":
+        if event-slot is 16:
+            upgradeSkillAbility(player)
+
+        openSkillsUpgrade(player)

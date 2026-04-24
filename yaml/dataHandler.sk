@@ -22,6 +22,9 @@ on load:
 on join:
     saveVariableData(player)
 
+on quit:
+    saveVariableData(player)
+
 #   ---------------------------------------------------
 #   ---------------------------------------------------
 command reloadyml:
@@ -46,6 +49,9 @@ function saveVariableData(p: player, b: boolean = true):
 
     {_p} is a player
 
+    set yml value "users.%uuid of {_p}%.balance" from "data" to {-data::%uuid of {_p}%::balance}
+    set yml value "users.%uuid of {_p}%.tokens" from "data" to {-token::%uuid of {_p}%}
+
     set {-data::%uuid of {_p}%::blast} to fetchBlast({_p})
     set {-data::%uuid of {_p}%::balance} to fetchBalance({_p})
     set {-language::%uuid of {_p}%} to fetchLanguage({_p})
@@ -60,7 +66,7 @@ function saveVariableData(p: player, b: boolean = true):
 
     if {points::%uuid of {_p}%} is not set:
         set {points::%uuid of {_p}%} to 1
-    else if {pointsReq::%uuid of {_p}%} is not set:
+    if {pointsReq::%uuid of {_p}%} is not set:
         set {pointsReq::%uuid of {_p}%} to 250
 
     {_b} is true
@@ -178,13 +184,18 @@ function fetchAbility(p: player) :: number:
 # ADD // REMOVE
 #
 function addBalance(p: player, amount: number):
-    set yml value "users.%uuid of {_p}%.balance" from "data" to (fetchBalance({_p}) + {_amount})
+    add {_amount} to {-data::%uuid of {_p}%::balance}
 
 function addToken(p: player, amount: number):
-    set yml value "users.%uuid of {_p}%.tokens" from "data" to (fetchTokens({_p}) + {_amount})
+    add {_amount} to {-token::%uuid of {_p}%}
 
 function addLevel(p: player, amount: number):
     set yml value "users.%uuid of {_p}%.level" from "data" to (fetchLevel({_p}) + {_amount})
+    saveVariableData({_p}, false)
+
+function addAbilitySkill(p: player, amount: number):
+    set yml value "users.%uuid of {_p}%.abilitySkill" from "data" to (fetchAbilitySkill({_p}) + {_amount})
+    saveVariableData({_p}, false)
 
 #
 # SET

@@ -1,0 +1,29 @@
+function openSkillsUpgrade(p: player):
+    set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::skillsUpgrade}%"
+
+    set slot 10 of {_s} to shears named "<#F48566>Blast &8• &f%{-data::%uuid of {_p}%::blast}% %{lang::%{-language::%uuid of {_p}%}%::blocks}%" with lore "&8Upgrade" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
+
+    set slot 12 of {_s} to experience bottle named "<#9ee03a>XP Multiplier &8• &f..." with lore "&8Upgrade" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
+    set slot 14 of {_s} to leather boots named "<#3ac2e0>Speed &8• &f%{-speed::%uuid of {_p}%}%" with lore "&8Upgrade" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
+    
+    
+    set slot 16 of {_s} to nether star named "<#e03a88>Ability Skill &8• &f%{-abilitySkill::%uuid of {_p}%} - 1%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::noConfirmation}%" and " " and "&7Makes abilities more powerful." and "&cDoes not &7reduce cooldowns." and "" and ("&7%{lang::%{-language::%uuid of {_p}%}%::upgradeFor}% <#edda4c>%(({-abilitySkill::%uuid of {_p}%} * 5) + 5)% %{lang::%{-language::%uuid of {_p}%}%::tokens}% &8(<#edda4c>%{-token::%uuid of {_p}%}%&8)" if {-abilitySkill::%uuid of {_p}%} is less than 9 else "&cMAX")
+    
+    open {_s} to {_p}
+
+function upgradeSkillAbility(p: player):
+
+    if {-abilitySkill::%uuid of {_p}%} is less than or equal to 8:
+        if {-token::%uuid of {_p}%} is higher or equal to (({-abilitySkill::%uuid of {_p}%} * 5) + 5):
+            addToken({_p}, (({-abilitySkill::%uuid of {_p}%} * 5) + 5) * -1)
+            addAbilitySkill({_p}, 1)
+        else:
+            send "&c%{lang::%{-language::%uuid of {_p}%}%::insufficientTokens}%" to {_p}
+    else:
+        send "&c%{lang::%{-language::%uuid of {_p}%}%::maxSkillLevel}%" to {_p}
+
+function upgradeSkillSpeed(p: player):
+
+function upgradeSkillXP(p: player):
+
+function upgradeSkillBlast(p: player):

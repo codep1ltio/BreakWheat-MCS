@@ -21,7 +21,7 @@ function abilityMeteorShower(p: player):
         subtract {_sw} * {_dist} from z of {_loc}
 
         while y of {_loc} is higher than y of {_p}:
-            draw the shape (sphere with radius (0.3 + ({_size} / 10))) at {_loc}
+            draw the shape (sphere with radius 1.2) at {_loc}
             
             subtract {_fs} from y of {_loc}
 

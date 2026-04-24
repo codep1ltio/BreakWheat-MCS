@@ -21,6 +21,7 @@ every 5 seconds:
     {otimer} is 3 # 15 seconds
 
     loop all players:
+
         saveVariableData(loop-player)
         checkInventory(loop-player)
         wait 1 tick
@@ -53,6 +54,9 @@ on right click:
         set {slsk::%uuid of player%} to now
     {slsk::%uuid of player%} is less than 0.5 second ago
     set {slsk::%uuid of player%} to now
+
+    if player's hotbar slot is 4:
+        openSkillsUpgrade(player)
     
     if player's hotbar slot is 8:
         openUpgradeToolsMenu(player)

@@ -44,3 +44,7 @@ on load:
     set {lang::EN::willReplaceAbility} to "This will replace your current ability!"
     set {lang::EN::thisisyourability} to "THIS IS YOUR ABILITY!"
     set {lang::EN::allAbilities} to "All Abilities"
+    set {lang::EN::skillsUpgrade} to "Upgrade Skills"
+    set {lang::EN::abilityUpgrade} to "Upgrade Ability Skill"
+    set {lang::EN::upgradeFor} to "Upgrade for"
+    set {lang::EN::maxSkillLevel} to "You've reached the max skill level!"
