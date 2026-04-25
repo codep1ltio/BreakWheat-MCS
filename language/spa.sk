@@ -45,3 +45,7 @@ on load:
     set {lang::SPA::willReplaceAbility} to "¡Esto reemplazará tu habilidad actual!"
     set {lang::SPA::thisisyourability} to "¡ESTA ES TU HABILIDAD!"
     set {lang::SPA::allAbilities} to "Todas las Habilidades"
+    set {lang::SPA::skillsUpgrade} to "Mejorar habilidades"
+    set {lang::SPA::abilityUpgrade} to "Mejorar habilidad"
+    set {lang::SPA::upgradeFor} to "Mejorar por"
+    set {lang::SPA::maxSkillLevel} to "¡Has alcanzado el nivel máximo de habilidad!"
