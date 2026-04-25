@@ -45,3 +45,7 @@ on load:
     set {lang::RU::willReplaceAbility} to "Это заменит вашу текущую способность!"
     set {lang::RU::thisisyourability} to "ЭТО ВАША СПОСОБНОСТЬ!"
     set {lang::RU::allAbilities} to "Все Способности"
+    set {lang::RU::skillsUpgrade} to "Улучшить навыки"
+    set {lang::RU::abilityUpgrade} to "Улучшить способность"
+    set {lang::RU::upgradeFor} to "Улучшить за"
+    set {lang::RU::maxSkillLevel} to "Вы достигли максимального уровня навыка!"
