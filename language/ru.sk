@@ -49,3 +49,13 @@ on load:
     set {lang::RU::abilityUpgrade} to "Улучшить способность"
     set {lang::RU::upgradeFor} to "Улучшить за"
     set {lang::RU::maxSkillLevel} to "Вы достигли максимального уровня навыка!"
+
+    set {lang::RU::increaseWheatBreaking} to "Увеличивает сбор пшеницы"
+    set {lang::RU::radiusforharvesters} to "радиус для комбайнов"
+    set {lang::RU::gainxpfaster} to "Получайте очки опыта быстрее"
+    set {lang::RU::tolevelupfaster} to "чтобы быстрее повышать уровень!"
+    set {lang::RU::fasterwhile} to "Делает вас быстрее пока"
+    set {lang::RU::holdingharvester} to "держите комбайн."
+    set {lang::RU::abilitymorepowerful} to "Делает способности мощнее."
+    set {lang::RU::doesnot} to "Не"
+    set {lang::RU::reducecooldown} to "уменьшает перезарядку."
