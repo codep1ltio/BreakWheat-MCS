@@ -8,5 +8,5 @@ function abilityShockwave(p: player):
         loop all blocks in radius (loop-number) of {_p}:
             loop-block is wheat
 
-            breakWheat({_p}, location of loop-block)
+            breakWheat({_p}, location of loop-block, true)
         wait 1 tick

@@ -12,7 +12,7 @@ placeholderapi placeholder with the prefix "skript":
     else if the identifier is "levelprogress":
         set the result to ({points::%uuid of player%} / {pointsReq::%uuid of player%}) * 100
     else if the identifier is "points":
-        set the result to "<#e3d956>%{points::%uuid of player%}% &8/ <#98de5b>%{pointsReq::%uuid of player%}%"
+        set the result to "<#e3d956>%shortNum({points::%uuid of player%})% &8/ <#98de5b>%shortNum({pointsReq::%uuid of player%})%"
     else if the identifier is "level":
         set the result to {-level::%uuid of player%}
 
@@ -38,12 +38,46 @@ command reloadyml:
 #   ---------------------------------------------------
 #   ---------------------------------------------------
 
+command resetall <player>:
+    permission: op
+    trigger:
+        set {points::%uuid of arg-1%} to 1
+        set {pointsReq::%uuid of arg-1%} to 250
+        setLevel(arg-1, 1)
+
+        set {xpmult::%uuid of arg-1%} to 1.00
+        set {-data::%uuid of arg-1%::balance} to 0
+        set {-token::%uuid of arg-1%} to 0
+
+        if yml "data" isn't loaded:
+            load yml "plugins/Skript/scripts/yaml/data.yml" as "data"
+        set {_uuid} to (uuid of arg-1)
+
+        set yml value "users.%{_uuid}%.balance" from "data" to 0
+        set yml value "users.%{_uuid}%.tokens" from "data" to 0
+        set yml value "users.%{_uuid}%.blast" from "data" to 0
+        set yml value "users.%{_uuid}%.multiplier" from "data" to 1
+        set yml value "users.%{_uuid}%.speed" from "data" to 0.2
+        set yml value "users.%{_uuid}%.lang" from "data" to "EN"
+        set yml value "users.%{_uuid}%.hoe" from "data" to 1
+        set yml value "users.%{_uuid}%.level" from "data" to 1
+        set yml value "users.%{_uuid}%.tokenChance" from "data" to 0.001
+        set yml value "users.%{_uuid}%.abilitySkill" from "data" to 1
+        set yml value "users.%{_uuid}%.ability" from "data" to 1
+
+        save()
+
 command resetLevel <player>:
     permission: op
     trigger:
         set {points::%uuid of arg-1%} to 1
         set {pointsReq::%uuid of arg-1%} to 250
         setLevel(arg-1, 1)
+
+command setToken <player> <number>:
+    permission: op 
+    trigger:
+        set {-token::%uuid of arg-1%} to arg-2
 
 function saveVariableData(p: player, b: boolean = true):
 
@@ -68,6 +102,9 @@ function saveVariableData(p: player, b: boolean = true):
         set {points::%uuid of {_p}%} to 1
     if {pointsReq::%uuid of {_p}%} is not set:
         set {pointsReq::%uuid of {_p}%} to 250
+
+    if {xpmult::%uuid of {_p}%} is not set:
+        set {xpmult::%uuid of {_p}%} to 1.00
 
     {_b} is true
     send action bar "%{lang::%{-language::%uuid of {_p}%}%::saved_variable_data}%" to {_p}
@@ -108,7 +145,7 @@ local function init(p: player):
         set yml value "users.%{_uuid}%.multiplier" from "data" to 1
 
     if yml path "users.%{_uuid}%.speed" in "data" doesn't exist:
-        set yml value "users.%{_uuid}%.speed" from "data" to 0
+        set yml value "users.%{_uuid}%.speed" from "data" to 0.2
 
     if yml path "users.%{_uuid}%.lang" in "data" doesn't exist:
         set yml value "users.%{_uuid}%.lang" from "data" to "EN"
@@ -183,6 +220,10 @@ function fetchAbility(p: player) :: number:
 # ADD // REMOVE
 # ADD // REMOVE
 #
+function addBlast(p: player, amount: integer):
+    set yml value "users.%uuid of {_p}%.blast" from "data" to (fetchBlast({_p}) + {_amount})
+    saveVariableData({_p}, false)
+
 function addBalance(p: player, amount: number):
     add {_amount} to {-data::%uuid of {_p}%::balance}
 
@@ -196,6 +237,13 @@ function addLevel(p: player, amount: number):
 function addAbilitySkill(p: player, amount: number):
     set yml value "users.%uuid of {_p}%.abilitySkill" from "data" to (fetchAbilitySkill({_p}) + {_amount})
     saveVariableData({_p}, false)
+
+function addSpeed(p: player, amount: number):
+    set yml value "users.%uuid of {_p}%.speed" from "data" to (fetchSpeed({_p}) + {_amount})
+    saveVariableData({_p}, false)
+
+function addXPMult(p: player, amount: number):
+    add {_amount} to {xpmult::%uuid of {_p}%}
 
 #
 # SET

@@ -8,7 +8,7 @@ function loadWheat():
         clear {-wheatQueue::%loop-index%}
         clear {-wheatQueue::%loop-value%}
 
-function breakWheat(p: player, loc: location):
+function breakWheat(p: player, loc: location, isAbility: boolean = false):
     if {timeSinceLastBreak::%uuid of {_p}%} is less than 3 seconds ago:
         set {-wl::%uuid of {_p}%} to 0
 
@@ -21,7 +21,12 @@ function breakWheat(p: player, loc: location):
         set {_oo} to 1
         add {_loc} to {-wheatQueue::*}
         add 1 to {-wl::%uuid of {_p}%}
-        add (1 * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) to {points::%uuid of {_p}%}
+
+    else if {_isAbility} is true:
+        set block at {_loc} to air
+        set {_oo} to 1
+        add {_loc} to {-wheatQueue::*}
+        add 1 to {-wl::%uuid of {_p}%}
     
     else:
         loop blocks in radius ({-data::%uuid of {_p}%::blast} + {hoes::%{-hoe::%uuid of {_p}%}%::blast}) of {_loc}:
@@ -31,9 +36,10 @@ function breakWheat(p: player, loc: location):
             add location of loop-block to {-wheatQueue::*}
             add 1 to {-wl::%uuid of {_p}%}
             add 1 to {_oo}
-            add (1 * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) to {points::%uuid of {_p}%}
+            
 
-    send action bar "&a+$%calculateBalance({_p}, {-wl::%uuid of {_p}%})% &8(&e$%calculateBalance({_p}, {_oo})%&8)" to {_p}
+    send action bar "&a+$%calculateBalance({_p}, {-wl::%uuid of {_p}%})% &8(&e$%calculateBalance({_p}, {_oo})%&8) <#f0eec5>and <#3ac2e0>%(({xpmult::%uuid of {_p}%} * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) * {-wl::%uuid of {_p}%})% XP &8(<#3ac2e0>%(({xpmult::%uuid of {_p}%} * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) * {_oo})%&8)" to {_p}
+    add (({xpmult::%uuid of {_p}%} * {hoes::%{-hoe::%uuid of {_p}%}%::mult}) * {_oo}) to {points::%uuid of {_p}%}
     addBalance({_p}, calculateBalance({_p}, {_oo}))
 
     if chance of {-tokenChance::%uuid of {_p}%}:

@@ -34,7 +34,7 @@ function abilityMeteorShower(p: player):
         loop all blocks in radius {_size} + 2 of {_loc}:
             loop-block is wheat
 
-            breakWheat({_p}, location of loop-block)
+            breakWheat({_p}, location of loop-block, true)
 
         wait 10 ticks
         set {_loc} to position of {_p}

@@ -4,10 +4,17 @@ on block trample:
 on load:
     set {otimer} to 0
 
-every 2 seconds:
+function walkSpeedCheck(p: player):
+    if {_p}'s hotbar slot is 0:
+        set {_p}'s walk speed to {-speed::%uuid of {_p}%}
+    else:
+        set {_p}'s walk speed to 0.2
+
+every 0.6 seconds:
     loop all players:
         levelCheck(loop-player)
         doAbilityEffect(loop-player)
+        walkSpeedCheck(loop-player)
 
         {slska::%uuid of loop-player%::sent} is false 
         if {slska::%uuid of loop-player%} is less than {ability::%{-abilities::%uuid of loop-player%}%::cooldown} ago:
@@ -55,13 +62,14 @@ on right click:
     {slsk::%uuid of player%} is less than 0.5 second ago
     set {slsk::%uuid of player%} to now
 
-    if player's hotbar slot is 4:
+    if player's hotbar slot is 4: # skills
         openSkillsUpgrade(player)
     
-    if player's hotbar slot is 8:
+    if player's hotbar slot is 8: # upgrade menu
         openUpgradeToolsMenu(player)
 
-    if player's hotbar slot is 0:
+    if player's hotbar slot is 0: # holding a harvester
+
         if player is sneaking:
             # cooldown sys
             if {slska::%uuid of player%} is not set:

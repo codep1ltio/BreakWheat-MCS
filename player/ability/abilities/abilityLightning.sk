@@ -44,6 +44,6 @@ function abilityLightningStorm(p: player):
             loop-block is wheat
 
             if chance of 5%:
-                breakWheat({_p}, location of loop-block)
+                breakWheat({_p}, location of loop-block, true)
 
         wait 3 ticks

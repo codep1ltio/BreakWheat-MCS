@@ -39,4 +39,13 @@ on inventory click:
         if event-slot is 16:
             upgradeSkillAbility(player)
 
+        else if event-slot is 12:
+            upgradeSkillXP(player)
+
+        else if event-slot is 10:
+            upgradeSkillBlast(player)
+
+        else if event-slot is 14:
+            upgradeSkillSpeed(player)
+
         openSkillsUpgrade(player)

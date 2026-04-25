@@ -20,7 +20,7 @@ local function OrbitalStrike(p: player, loc: location, dur: timespan):
         loop all blocks in radius ({_size}) of {_loc}:
             loop-block is wheat
 
-            breakWheat({_p}, location of loop-block)
+            breakWheat({_p}, location of loop-block, true)
 
         # particles at the ground
         draw 50 of dust using dustOption(gray, 50) at {_loc} with offset vector((random number between -10 and 10), (random number between 2 and 3), (random number between -10 and 10))
@@ -57,6 +57,6 @@ function abilityOrbitalStrike(p: player, duration: timespan):
 
     set {_strikeY} to y of highest block at location({_x}, 0, {_z}, world of {_p})
 
-    breakWheat({_p}, location({_x}, {_strikeY} + 1, {_z}, world of {_p}))
+    breakWheat({_p}, location({_x}, {_strikeY} + 1, {_z}, world of {_p}), true)
     
     OrbitalStrike({_p}, location({_x}, {_strikeY} + 1, {_z}, world of {_p}), {_duration})
