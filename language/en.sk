@@ -48,3 +48,13 @@ on load:
     set {lang::EN::abilityUpgrade} to "Upgrade Ability Skill"
     set {lang::EN::upgradeFor} to "Upgrade for"
     set {lang::EN::maxSkillLevel} to "You've reached the max skill level!"
+
+    set {lang::EN::increaseWheatBreaking} to "Increases wheat breaking"
+    set {lang::EN::radiusforharvesters} to "radius for harvesters"
+    set {lang::EN::gainxpfaster} to "Gain XP points faster"
+    set {lang::EN::tolevelupfaster} to "to level up faster!"
+    set {lang::EN::fasterwhile} to "Makes you faster while"
+    set {lang::EN::holdingharvester} to "holding a harvester."
+    set {lang::EN::abilitymorepowerful} to "Makes abilities more powerful."
+    set {lang::EN::doesnot} to "Does not"
+    set {lang::EN::reducecooldown} to "reduce cooldown."
