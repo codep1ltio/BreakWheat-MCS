@@ -45,3 +45,7 @@ on load:
     set {lang::FI::willReplaceAbility} to "Tämä korvaa nykyisen kykysi!"
     set {lang::FI::thisisyourability} to "TÄMÄ ON SINUN KYKYSI!"
     set {lang::FI::allAbilities} to "Kaikki Kyvyt"
+    set {lang::FI::skillsUpgrade} to "Päivitä taidot"
+    set {lang::FI::abilityUpgrade} to "Päivitä kyky"
+    set {lang::FI::upgradeFor} to "Päivitä kohteelle"
+    set {lang::FI::maxSkillLevel} to "Olet saavuttanut taidon maksimitason!"
