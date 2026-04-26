@@ -1,7 +1,5 @@
 users:
     4002120a-88f4-4830-b464-b1768fc0de9f:
-        balance: 1326.3499999999894
-        tokens: 4
         blast: 0
         multiplier: 1
         speed: 0.3
@@ -11,3 +9,5 @@ users:
         tokenChance: 0.001
         abilitySkill: 1
         ability: 1
+        balance: 0
+        tokens: 0
