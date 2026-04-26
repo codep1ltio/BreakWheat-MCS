@@ -49,3 +49,13 @@ on load:
     set {lang::SPA::abilityUpgrade} to "Mejorar habilidad"
     set {lang::SPA::upgradeFor} to "Mejorar por"
     set {lang::SPA::maxSkillLevel} to "¡Has alcanzado el nivel máximo de habilidad!"
+
+    set {lang::SPA::increaseWheatBreaking} to "Aumenta la rotura de trigo"
+    set {lang::SPA::radiusforharvesters} to "radio para cosechadoras"
+    set {lang::SPA::gainxpfaster} to "Gana puntos de XP más rápido"
+    set {lang::SPA::tolevelupfaster} to "¡para subir de nivel más rápido!"
+    set {lang::SPA::fasterwhile} to "Te hace más rápido mientras"
+    set {lang::SPA::holdingharvester} to "sostienes una cosechadora."
+    set {lang::SPA::abilitymorepowerful} to "Hace las habilidades más poderosas."
+    set {lang::SPA::doesnot} to "No"
+    set {lang::SPA::reducecooldown} to "reduce el tiempo de reutilización."

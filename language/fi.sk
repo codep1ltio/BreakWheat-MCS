@@ -49,3 +49,13 @@ on load:
     set {lang::FI::abilityUpgrade} to "Päivitä kyky"
     set {lang::FI::upgradeFor} to "Päivitä kohteelle"
     set {lang::FI::maxSkillLevel} to "Olet saavuttanut taidon maksimitason!"
+
+    set {lang::FI::increaseWheatBreaking} to "Lisää vehnän murtamista"
+    set {lang::FI::radiusforharvesters} to "säde korjuukoneille"
+    set {lang::FI::gainxpfaster} to "Hanki XP-pisteitä nopeammin"
+    set {lang::FI::tolevelupfaster} to "tasoittuaksesi nopeammin!"
+    set {lang::FI::fasterwhile} to "Tekee sinusta nopeamman kun"
+    set {lang::FI::holdingharvester} to "pidät korjuukonetta."
+    set {lang::FI::abilitymorepowerful} to "Tekee kyvyistä tehokkaampia."
+    set {lang::FI::doesnot} to "Ei"
+    set {lang::FI::reducecooldown} to "vähennä jäähtymisaikaa."

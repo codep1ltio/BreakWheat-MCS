@@ -49,3 +49,13 @@ on load:
     set {lang::DE::abilityUpgrade} to "Fähigkeit verbessern"
     set {lang::DE::upgradeFor} to "Verbessern für"
     set {lang::DE::maxSkillLevel} to "Du hast das maximale Fähigkeitslevel erreicht!"
+
+    set {lang::DE::increaseWheatBreaking} to "Erhöht das Weizenbrechen"
+    set {lang::DE::radiusforharvesters} to "Radius für Ernter"
+    set {lang::DE::gainxpfaster} to "XP-Punkte schneller sammeln"
+    set {lang::DE::tolevelupfaster} to "um schneller aufzusteigen!"
+    set {lang::DE::fasterwhile} to "Macht dich schneller während"
+    set {lang::DE::holdingharvester} to "du einen Ernter hältst."
+    set {lang::DE::abilitymorepowerful} to "Macht Fähigkeiten mächtiger."
+    set {lang::DE::doesnot} to "Reduziert nicht"
+    set {lang::DE::reducecooldown} to "die Abklingzeit."
