@@ -59,9 +59,9 @@ function showAllHarvesters(p: player):
     
 
     
-    loop 45 times:
-        slot loop-number of {_s} is air
-        set slot loop-number of {_s} to {hoes::%{_hoheh}%}
+    loop 24 times:
+        slot loop-number + 9 of {_s} is air
+        set slot loop-number + 9 of {_s} to {hoes::%{_hoheh}%}
         add 1 to {_hoheh}
 
     open {_s} to {_p}

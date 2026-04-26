@@ -4,13 +4,15 @@ command giveHoe <player> <integer>:
         give {hoes::%arg-2%} to arg-1
 
 on load:
-    set {hoes::1} to unbreakable wooden hoe named "<#5c5730>Broken Harvester" with lore "&8Starter ☆☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::1::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::1::mult}%"
+    set {hoes::1} to unbreakable wooden hoe named "<#5c5730>Broken Harvester" with lore "&8Starter ☆☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::1::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::1::mult}%"
+    wait 1 tick
     set {hoes::1::blast} to 0
     set {hoes::1::mult} to 1.05
 
 
 
-    set {hoes::2} to unbreakable wooden hoe named "<#5e502d>Rotten Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::2::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::2::mult}%"
+    set {hoes::2} to unbreakable wooden hoe named "<#5e502d>Rotten Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::2::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::2::mult}%"
+    wait 1 tick
     set {hoes::2::blast} to 0
     set {hoes::2::mult} to 1.08
     
@@ -20,7 +22,8 @@ on load:
 
 
 
-    set {hoes::3} to unbreakable wooden hoe named "<#cf7f29>Rusted Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::3::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::3::mult}%"
+    set {hoes::3} to unbreakable wooden hoe named "<#cf7f29>Rusted Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::3::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::3::mult}%"
+    wait 1 tick
     set {hoes::3::blast} to 0
     set {hoes::3::mult} to 1.1
 
@@ -30,7 +33,8 @@ on load:
 
 
 
-    set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::4::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::4::mult}%"
+    set {hoes::4} to unbreakable wooden hoe named "<#a4632d>Decayed Wooden Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::4::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::4::mult}%"
+    wait 1 tick
     set {hoes::4::blast} to 0
     set {hoes::4::mult} to 1.11
 
@@ -40,7 +44,8 @@ on load:
 
 
 
-    set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::5::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::5::mult}%"
+    set {hoes::5} to unbreakable wooden hoe named "<#A4722D>Wooden Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::5::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::5::mult}%"
+    wait 1 tick
     set {hoes::5::blast} to 0
     set {hoes::5::mult} to 1.13
 
@@ -50,7 +55,8 @@ on load:
 
 
 
-    set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::6::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::6::mult}%"
+    set {hoes::6} to unbreakable wooden hoe named "<#9c7135>Hard Wood Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::6::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::6::mult}%"
+    wait 1 tick
     set {hoes::6::blast} to 0
     set {hoes::6::mult} to 1.15
 
@@ -60,7 +66,8 @@ on load:
 
 
 
-    set {hoes::7} to unbreakable wooden hoe named "<#ffe030>Sun Dried Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::7::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::7::mult}%"
+    set {hoes::7} to unbreakable wooden hoe named "<#ffe030>Sun Dried Harvester" with lore "&8Common ★☆☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::7::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::7::mult}%"
+    wait 1 tick
     set {hoes::7::blast} to 0
     set {hoes::7::mult} to 1.18
 
@@ -70,7 +77,8 @@ on load:
 
 
     # dont forget to change the value on the lore
-    set {hoes::8} to unbreakable wooden hoe named "<#b59567>Artificial Wooden Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::8::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::8::mult}%"
+    set {hoes::8} to unbreakable wooden hoe named "<#b59567>Artificial Wooden Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::8::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::8::mult}%"
+    wait 1 tick
     set {hoes::8::blast} to 0
     set {hoes::8::mult} to 1.2
 
@@ -79,10 +87,61 @@ on load:
     set {hoes::8::level} to 30
 
     # dont forget to change the value on the lore
-    set {hoes::9} to unbreakable wooden hoe named "<#d69554>Pressed Wood Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::9::blast} + 1% block" and " &8• <#45CF30>Mult: &fx%{hoes::9::mult}%"
+    set {hoes::9} to unbreakable wooden hoe named "<#d69554>Pressed Wood Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::9::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::9::mult}%"
+    wait 1 tick
     set {hoes::9::blast} to 0
     set {hoes::9::mult} to 1.25
 
     set {hoes::9::price} to 4200
     set {hoes::9::tokens} to 6
     set {hoes::9::level} to 34
+
+    # dont forget to change the value on the lore
+    set {hoes::10} to unbreakable stone hoe named "<#a8a8a8>Slate Stone Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::10::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::10::mult}%"
+    wait 1 tick
+    set {hoes::10::blast} to 0
+    set {hoes::10::mult} to 1.45
+
+    set {hoes::10::price} to 4900
+    set {hoes::10::tokens} to 7
+    set {hoes::10::level} to 38
+
+    # dont forget to change the value on the lore
+    set {hoes::11} to unbreakable stone hoe named "<#a8a8a8>Limestone Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::11::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::11::mult}%"
+    wait 1 tick
+    set {hoes::11::blast} to 0
+    set {hoes::11::mult} to 1.60
+
+    set {hoes::11::price} to 6000
+    set {hoes::11::tokens} to 8
+    set {hoes::11::level} to 42
+
+    # dont forget to change the value on the lore
+    set {hoes::12} to unbreakable stone hoe named "<#a8a8a8>Stone Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::12::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::12::mult}%"
+    wait 1 tick
+    set {hoes::12::blast} to 0
+    set {hoes::12::mult} to 1.81
+
+    set {hoes::12::price} to 8000
+    set {hoes::12::tokens} to 8
+    set {hoes::12::level} to 46
+
+    # dont forget to change the value on the lore
+    set {hoes::13} to unbreakable stone hoe named "<#a8a8a8>Granite Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::13::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::13::mult}%"
+    wait 1 tick
+    set {hoes::13::blast} to 0
+    set {hoes::13::mult} to 2.05
+
+    set {hoes::13::price} to 11000
+    set {hoes::13::tokens} to 9
+    set {hoes::13::level} to 49
+
+    # dont forget to change the value on the lore
+    set {hoes::14} to unbreakable stone hoe named "<#6e6c6b>Flint Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::14::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::14::mult}%"
+    wait 1 tick
+    set {hoes::14::blast} to 0
+    set {hoes::14::mult} to 2.25
+
+    set {hoes::14::price} to 16000
+    set {hoes::14::tokens} to 11
+    set {hoes::14::level} to 54

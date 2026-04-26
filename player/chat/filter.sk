@@ -1,0 +1,42 @@
+function chatFilter(m: text, p: player) :: boolean:
+
+    replace all "0" in {_m} with "o"
+    replace all "1" in {_m} with "i"
+    replace all "4" in {_m} with "a"
+
+    if {_m} contains any of {blacklistedwords::*}:
+        send "&c%{_p}% &eattempted to say &c%{_m}%" to ops
+        return true
+    else:
+        return false
+
+on load:
+    set {blacklistedwords::1} to "nigga"
+    set {blacklistedwords::2} to "nigger"
+    set {blacklistedwords::3} to "fuck"
+    set {blacklistedwords::4} to "bitch"
+    set {blacklistedwords::5} to "titties"
+
+    set {blacklistedwords::6} to "tits"
+    set {blacklistedwords::7} to "ass"
+    set {blacklistedwords::8} to "asshole"
+    set {blacklistedwords::9} to "cunt"
+    set {blacklistedwords::10} to "niga"
+
+    set {blacklistedwords::11} to "pussy"
+    set {blacklistedwords::12} to "dick"
+    set {blacklistedwords::13} to "pussy"
+    set {blacklistedwords::14} to "slut"
+    set {blacklistedwords::15} to "bastard"
+
+    set {blacklistedwords::16} to "bullshit"
+    set {blacklistedwords::17} to "dumbass"
+    set {blacklistedwords::18} to "fag"
+    set {blacklistedwords::19} to "moron"
+    set {blacklistedwords::20} to "whore"
+
+    set {blacklistedwords::21} to "porn"
+    set {blacklistedwords::22} to "xxx"
+    set {blacklistedwords::23} to "sex"
+    set {blacklistedwords::24} to "nude"
+    set {blacklistedwords::25} to "shit"

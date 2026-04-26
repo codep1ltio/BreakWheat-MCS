@@ -2,12 +2,12 @@ users:
     4002120a-88f4-4830-b464-b1768fc0de9f:
         blast: 0
         multiplier: 1
-        speed: 0.3
+        speed: 0.44999999999999996
         lang: EN
         hoe: 1
-        level: 7
+        level: 12
         tokenChance: 0.001
         abilitySkill: 1
         ability: 1
-        balance: 0
+        balance: 1363.2499999999927
         tokens: 0

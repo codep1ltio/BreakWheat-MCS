@@ -1,0 +1,7 @@
+on chat:
+    cancel event
+    set {_m} to message
+
+    chatFilter({_m}, player) is false 
+
+    broadcast "%player's prefix% &8• <#e3d956>lvl: %{-level::%uuid of player%}% &8• <#e0dace>%player% &8» &f%{_m}%"

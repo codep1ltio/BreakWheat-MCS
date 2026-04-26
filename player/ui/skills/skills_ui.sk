@@ -45,6 +45,6 @@ function upgradeSkillSpeed(p: player):
 
     if {-token::%uuid of {_p}%} is higher or equal to 2:
         addToken({_p}, -2)
-        addSpeed({_p}, 0.05)
+        addSpeed({_p}, 0.02)
     else:
         send "&c%{lang::%{-language::%uuid of {_p}%}%::insufficientTokens}%" to {_p}
