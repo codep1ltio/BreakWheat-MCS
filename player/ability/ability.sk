@@ -1,29 +1,60 @@
 # common ★☆☆☆☆☆☆, uncommon ★★☆☆☆☆☆, <#3881c9>Rare ★★★☆☆☆☆, epic ★★★★☆☆☆, legendary ★★★★★☆☆, <#aa38c9>Master ★★★★★★☆, <#FF4D4D>Grandmaster ★★★★★★★ || ★ ☆
 on load:
+    load_ability()
+
+command load_ability:
+    permission: op
+    trigger:
+        load_ability()
+
+function load_ability():
 
     set {ability::1} to feather named "<#d1d1d1>Dash" with lore "&8%{ability::1::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::1::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at your desired direction and" and "<#f0eec5>Shift + Right Click with your harvester."
     wait 1 tick
     set {ability::1::cooldown} to 2 seconds
+    wait 1 tick
     set {ability::1::rarity} to "Starter ☆☆☆☆☆☆☆"
+    wait 1 tick
+    set {ability::1::name} to "dash"
 
     set {ability::2} to wind charge named "<#85c9c7>Shockwave" with lore "&8%{ability::2::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::2::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."
     wait 1 tick
     set {ability::2::cooldown} to 5 seconds 
+    wait 1 tick
     set {ability::2::rarity} to "Common ★☆☆☆☆☆☆"
-
-    set {ability::3} to echo shard with glint named "<#734bc9>Lightning Storm" with lore "&8%{ability::3::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::3::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at the target object and" and "<#f0eec5>Shift + Right Click with your harvester."
     wait 1 tick
-    set {ability::3::cooldown} to 45 seconds
-    set {ability::3::rarity} to "<#aa38c9>Master ★★★★★★☆"
+    set {ability::2::name} to "shockwave"
 
-    set {ability::4} to amethyst shard with glint named "<#c938a3>Orbital Strike" with lore "&8%{ability::4::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::4::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at the target object and" and "<#f0eec5>Shift + Right Click with your harvester."
+    set {ability::3} to ender eye with glint named "<#57eb79>Acid Rain" with lore "&8%{ability::3::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::3::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."
     wait 1 tick
-    set {ability::4::cooldown} to 1 minute
+    set {ability::3::cooldown} to 35 seconds 
+    wait 1 tick
+    set {ability::3::rarity} to "<#3881c9>Rare ★★★☆☆☆☆"
+    wait 1 tick
+    set {ability::3::name} to "rain"
+
+    set {ability::4} to echo shard with glint named "<#734bc9>Lightning Storm" with lore "&8%{ability::4::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::4::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at the target object and" and "<#f0eec5>Shift + Right Click with your harvester."
+    wait 1 tick
+    set {ability::4::cooldown} to 45 seconds
+    wait 1 tick
     set {ability::4::rarity} to "<#aa38c9>Master ★★★★★★☆"
+    wait 1 tick
+    set {ability::4::name} to "lightning"
 
-    set {ability::5} to fire charge with glint named "<#ed9e4e>Meteor Shower" with lore "&8%{ability::5::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::5::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."
+    set {ability::5} to amethyst shard with glint named "<#c938a3>Orbital Strike" with lore "&8%{ability::5::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::5::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Look at the target object and" and "<#f0eec5>Shift + Right Click with your harvester."
     wait 1 tick
     set {ability::5::cooldown} to 1 minute
-    set {ability::5::rarity} to "<#FF4D4D>Grandmaster ★★★★★★★"
+    wait 1 tick
+    set {ability::5::rarity} to "<#aa38c9>Master ★★★★★★☆"
+    wait 1 tick
+    set {ability::5::name} to "orbital"
+
+    set {ability::6} to fire charge with glint named "<#ed9e4e>Meteor Shower" with lore "&8%{ability::6::rarity}%" and "" and "<#b5b59a>Cooldown: %{ability::6::cooldown}%" and "" and "&8-- <#b5b59a>Usage &8--" and "<#f0eec5>Shift + Right Click with your harvester."
+    wait 1 tick
+    set {ability::6::cooldown} to 1 minute
+    wait 1 tick
+    set {ability::6::rarity} to "<#FF4D4D>Grandmaster ★★★★★★★"
+    wait 1 tick
+    set {ability::6::name} to "meteor"
 
     # possibly 100 more

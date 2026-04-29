@@ -1,15 +1,18 @@
 function runAbility(p: player):
-    if {-abilities::%uuid of {_p}%} is 1:
+    if {ability::%{-abilities::%uuid of {_p}%}%::name} is "dash":
         abilityDash({_p})
 
-    else if {-abilities::%uuid of {_p}%} is 2:
+    else if {ability::%{-abilities::%uuid of {_p}%}%::name} is "shockwave":
         abilityShockwave({_p})
 
-    else if {-abilities::%uuid of {_p}%} is 3:
+    else if {ability::%{-abilities::%uuid of {_p}%}%::name} is "rain":
+        abilityRain({_p}, 15 seconds, {-abilitySkill::%uuid of {_p}%} + 4)
+
+    else if {ability::%{-abilities::%uuid of {_p}%}%::name} is "lightning":
         abilityLightningStorm({_p})
 
-    else if {-abilities::%uuid of {_p}%} is 4:
+    else if {ability::%{-abilities::%uuid of {_p}%}%::name} is "orbital":
         abilityOrbitalStrike({_p}, 20 seconds)
 
-    else if {-abilities::%uuid of {_p}%} is 5:
+    else if {ability::%{-abilities::%uuid of {_p}%}%::name} is "meteor":
         abilityMeteorShower({_p})

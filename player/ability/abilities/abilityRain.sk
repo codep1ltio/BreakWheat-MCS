@@ -1,0 +1,16 @@
+function abilityRain(p: player, t: timespan, size: int = 5):
+    set {_end} to now + {_t}
+
+    while now < {_end}:
+        set {_loc} to position of {_p}
+        add ({_size} + 3) to y of {_loc}
+
+        draw {_size}+10 of dust using dustOption(gray, 50) at {_loc} with offset vector((random number between ({_size}*-1) and {_size}), (random number between 0 and 1), (random number between ({_size}*-1) and {_size}))
+        draw 40 rain particle at {_loc} with offset vector((random number between ({_size}*-1) and {_size}), (random number between 0 and 1), (random number between ({_size}*-1) and {_size}))
+        
+        loop all blocks in radius ({_size}-2) of {_p}:
+            loop-block is wheat
+
+            breakWheat({_p}, location of loop-block)
+
+        wait 6 ticks

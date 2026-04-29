@@ -55,8 +55,7 @@ on pickup:
     cancel event
 
 on right click:
-    if player is not op:
-        cancel event
+    cancel event
     if {slsk::%uuid of player%} is not set:
         set {slsk::%uuid of player%} to now
     {slsk::%uuid of player%} is less than 0.5 second ago

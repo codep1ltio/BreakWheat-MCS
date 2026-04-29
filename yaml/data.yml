@@ -5,9 +5,9 @@ users:
         speed: 0.44999999999999996
         lang: EN
         hoe: 1
-        level: 12
+        level: 19
         tokenChance: 0.001
-        abilitySkill: 1
-        ability: 1
-        balance: 1363.2499999999927
-        tokens: 0
+        abilitySkill: 2
+        ability: 3
+        balance: 2744.266666666782
+        tokens: 4
