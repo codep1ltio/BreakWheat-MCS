@@ -130,7 +130,7 @@ on load:
     set {hoes::13} to unbreakable stone hoe named "<#a8a8a8>Granite Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::13::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::13::mult}%"
     wait 1 tick
     set {hoes::13::blast} to 0
-    set {hoes::13::mult} to 2.05
+    set {hoes::13::mult} to 3.99
 
     set {hoes::13::price} to 11000
     set {hoes::13::tokens} to 9
@@ -140,8 +140,98 @@ on load:
     set {hoes::14} to unbreakable stone hoe named "<#6e6c6b>Flint Harvester" with lore "&8Uncommon ★★☆☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::14::blast} + 1% block" and " &8&l| <#45CF30>Mult: &fx%{hoes::14::mult}%"
     wait 1 tick
     set {hoes::14::blast} to 0
-    set {hoes::14::mult} to 2.25
+    set {hoes::14::mult} to 5.05
 
     set {hoes::14::price} to 16000
     set {hoes::14::tokens} to 11
     set {hoes::14::level} to 54
+
+    # dont forget to change the value on the lore
+    set {hoes::15} to unbreakable iron hoe named "<#e8d18e>Sandstone Harvester" with lore "<#3881c9>Rare ★★★☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::15::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::15::mult}%"
+    wait 1 tick
+    set {hoes::15::blast} to 1
+    set {hoes::15::mult} to 7.95
+
+    set {hoes::15::price} to 19700
+    set {hoes::15::tokens} to 13
+    set {hoes::15::level} to 65
+
+    # dont forget to change the value on the lore
+    set {hoes::16} to unbreakable iron hoe named "<#fcf3d7>Glass Harvester" with lore "<#3881c9>Rare ★★★☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::16::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::16::mult}%"
+    wait 1 tick
+    set {hoes::16::blast} to 1
+    set {hoes::16::mult} to 9.5
+
+    set {hoes::16::price} to 23500
+    set {hoes::16::tokens} to 14
+    set {hoes::16::level} to 78
+
+    # dont forget to change the value on the lore
+    set {hoes::17} to unbreakable iron hoe named "<#f5f2eb>Iron Harvester" with lore "<#3881c9>Rare ★★★☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::17::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::17::mult}%"
+    wait 1 tick
+    set {hoes::17::blast} to 1
+    set {hoes::17::mult} to 12.75
+
+    set {hoes::17::price} to 38900
+    set {hoes::17::tokens} to 17
+    set {hoes::17::level} to 83
+
+    # dont forget to change the value on the lore
+    set {hoes::18} to unbreakable iron hoe named "<#abaaa9>Steel Harvester" with lore "<#3881c9>Rare ★★★☆☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::18::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::18::mult}%"
+    wait 1 tick
+    set {hoes::18::blast} to 1
+    set {hoes::18::mult} to 15.50
+
+    set {hoes::18::price} to 52500
+    set {hoes::18::tokens} to 20
+    set {hoes::18::level} to 92
+
+    # dont forget to change the value on the lore
+    set {hoes::19} to unbreakable iron hoe named "<#807f7e>Tungsten Harvester" with lore "<#8142ff>Epic ★★★★☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::19::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::19::mult}%"
+    wait 1 tick
+    set {hoes::19::blast} to 1
+    set {hoes::19::mult} to 18.25
+
+    set {hoes::19::price} to 80000
+    set {hoes::19::tokens} to 24
+    set {hoes::19::level} to 98
+
+    # dont forget to change the value on the lore
+    set {hoes::20} to unbreakable golden hoe named "<#f58989>Cursed Harvester" with lore "<#8142ff>Epic ★★★★☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::20::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::20::mult}%"
+    wait 1 tick
+    set {hoes::20::blast} to 1
+    set {hoes::20::mult} to 22.44
+
+    set {hoes::20::price} to 100000
+    set {hoes::20::tokens} to 28
+    set {hoes::20::level} to 107
+
+    # dont forget to change the value on the lore
+    set {hoes::21} to unbreakable golden hoe named "<#cf8327>Molten Harvester" with lore "<#8142ff>Epic ★★★★☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::21::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::21::mult}%"
+    wait 1 tick
+    set {hoes::21::blast} to 1
+    set {hoes::21::mult} to 28.89
+
+    set {hoes::21::price} to 123456
+    set {hoes::21::tokens} to 30
+    set {hoes::21::level} to 112
+
+    # dont forget to change the value on the lore
+    set {hoes::22} to unbreakable diamond hoe named "<#51e1e8>Water Harvester" with lore "<#8142ff>Epic ★★★★☆☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::22::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::22::mult}%"
+    wait 1 tick
+    set {hoes::22::blast} to 1
+    set {hoes::22::mult} to 48.17
+
+    set {hoes::22::price} to 175540
+    set {hoes::22::tokens} to 43
+    set {hoes::22::level} to 153
+
+    # dont forget to change the value on the lore
+    set {hoes::23} to unbreakable diamond hoe with glint named "<#00ffd6>H<#06ebd5>y<#0bd7d4>p<#11c3d3>e<#17afd2>r<#1c9bd1>n<#2287d0>o<#2773cf>v<#2d5fce>a Harvester" with lore "<#b0db23>Legendary ★★★★★☆☆" and " " and " &8• <#F48566>Blast: &f%{hoes::23::blast} + 1% blocks" and " &8&l| <#45CF30>Mult: &fx%{hoes::23::mult}%"
+    wait 1 tick
+    set {hoes::23::blast} to 2
+    set {hoes::23::mult} to 64.17
+
+    set {hoes::23::price} to 212440
+    set {hoes::23::tokens} to 54
+    set {hoes::23::level} to 170

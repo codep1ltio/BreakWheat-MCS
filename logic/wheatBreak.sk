@@ -7,7 +7,7 @@ function loadWheat():
         set block at loop-value to wheat[age=7]
         clear {-wheatQueue::%loop-index%}
         clear {-wheatQueue::%loop-value%}
-
+    
 function breakWheat(p: player, loc: location, isAbility: boolean = false):
     if {timeSinceLastBreak::%uuid of {_p}%} is less than 3 seconds ago:
         set {-wl::%uuid of {_p}%} to 0
@@ -17,10 +17,20 @@ function breakWheat(p: player, loc: location, isAbility: boolean = false):
     set {_oo} to 0
 
     if {-data::%uuid of {_p}%::blast} is 0:
-        set block at {_loc} to air
-        set {_oo} to 1
-        add {_loc} to {-wheatQueue::*}
-        add 1 to {-wl::%uuid of {_p}%}
+        if {hoes::%{-hoe::%uuid of {_p}%}%::blast} is 0:
+
+            set block at {_loc} to air
+            set {_oo} to 1
+            add {_loc} to {-wheatQueue::*}
+            add 1 to {-wl::%uuid of {_p}%}
+        else:
+            loop blocks in radius ({-data::%uuid of {_p}%::blast} + {hoes::%{-hoe::%uuid of {_p}%}%::blast}) of {_loc}:
+                loop-block is wheat
+
+                set block at (location of loop-block) to air
+                add location of loop-block to {-wheatQueue::*}
+                add 1 to {-wl::%uuid of {_p}%}
+                add 1 to {_oo}
 
     else if {_isAbility} is true:
         set block at {_loc} to air

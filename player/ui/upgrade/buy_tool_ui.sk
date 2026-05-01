@@ -6,8 +6,8 @@ function openUpgradeToolsMenu(p: player):
 
 function openHarvesterShop(p: player):
     set {_s} to chest inventory with 3 rows named "%{lang::%{-language::%uuid of {_p}%}%::harvesterShop}%"
-    set slot 12 of {_s} to (lime stained glass pane) named "<#86e362>%{lang::%{-language::%uuid of {_p}%}%::purchase}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::noConfirmation}%" and "" and "<#8aed4c>%{lang::%{-language::%uuid of {_p}%}%::price}%:   $%{hoes::%{-hoe::%uuid of {_p}%} + 1%::price}% &8(<#8aed4c>$%{-data::%uuid of {_p}%::balance}%&8)" and "<#edaa4c>%{lang::%{-language::%uuid of {_p}%}%::tokens}%: %{hoes::%{-hoe::%uuid of {_p}%} + 1%::tokens}% &8(<#edaa4c>%{-token::%uuid of {_p}%}%&8)" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::level}%:   %{hoes::%{-hoe::%uuid of {_p}%} + 1%::level}% &8(<#edda4c>%{-level::%uuid of {_p}%}%&8)"
-    set slot 13 of {_s} to {hoes::%{-hoe::%uuid of {_p}%} + 1%} with lore {lang::%{-language::%uuid of {_p}%}%::requirements} and "<#8aed4c>%{lang::%{-language::%uuid of {_p}%}%::price}%:   $%{hoes::%{-hoe::%uuid of {_p}%} + 1%::price}%" and "<#edaa4c>%{lang::%{-language::%uuid of {_p}%}%::tokens}%: %{hoes::%{-hoe::%uuid of {_p}%} + 1%::tokens}%" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::level}%:   %{hoes::%{-hoe::%uuid of {_p}%} + 1%::level}%" and {lang::%{-language::%uuid of {_p}%}%::comparison} and "<#F48566>%{lang::%{-language::%uuid of {_p}%}%::blast}%: &f%{hoes::%{-hoe::%uuid of {_p}%}%::blast}% <#8aed4c>+ %{hoes::%{-hoe::%uuid of {_p}%} + 1%::blast} - {hoes::%{-hoe::%uuid of {_p}%}%::blast}% &f%{lang::%{-language::%uuid of {_p}%}%::blocks}%" and "<#45CF30>%{lang::%{-language::%uuid of {_p}%}%::mult}%: &fx%{hoes::%{-hoe::%uuid of {_p}%}%::mult}% <#8aed4c>+ %{hoes::%{-hoe::%uuid of {_p}%} + 1%::mult} - {hoes::%{-hoe::%uuid of {_p}%}%::mult}%"
+    set slot 12 of {_s} to (lime stained glass pane) named "<#86e362>%{lang::%{-language::%uuid of {_p}%}%::purchase}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::noConfirmation}%" and "" and "<#8aed4c>%{lang::%{-language::%uuid of {_p}%}%::price}%:   $%formatNumber({hoes::%{-hoe::%uuid of {_p}%} + 1%::price})% &8(<#8aed4c>$%{-data::%uuid of {_p}%::balance}%&8)" and "<#edaa4c>%{lang::%{-language::%uuid of {_p}%}%::tokens}%: %{hoes::%{-hoe::%uuid of {_p}%} + 1%::tokens}% &8(<#edaa4c>%{-token::%uuid of {_p}%}%&8)" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::level}%:   %{hoes::%{-hoe::%uuid of {_p}%} + 1%::level}% &8(<#edda4c>%{-level::%uuid of {_p}%}%&8)"
+    set slot 13 of {_s} to {hoes::%{-hoe::%uuid of {_p}%} + 1%} with lore {lang::%{-language::%uuid of {_p}%}%::requirements} and "<#8aed4c>%{lang::%{-language::%uuid of {_p}%}%::price}%:   $%formatNumber({hoes::%{-hoe::%uuid of {_p}%} + 1%::price})%" and "<#edaa4c>%{lang::%{-language::%uuid of {_p}%}%::tokens}%: %{hoes::%{-hoe::%uuid of {_p}%} + 1%::tokens}%" and "<#edda4c>%{lang::%{-language::%uuid of {_p}%}%::level}%:   %{hoes::%{-hoe::%uuid of {_p}%} + 1%::level}%" and {lang::%{-language::%uuid of {_p}%}%::comparison} and "<#F48566>%{lang::%{-language::%uuid of {_p}%}%::blast}%: &f%{hoes::%{-hoe::%uuid of {_p}%}%::blast}% <#8aed4c>+ %{hoes::%{-hoe::%uuid of {_p}%} + 1%::blast} - {hoes::%{-hoe::%uuid of {_p}%}%::blast}% &f%{lang::%{-language::%uuid of {_p}%}%::blocks}%" and "<#45CF30>%{lang::%{-language::%uuid of {_p}%}%::mult}%: &fx%{hoes::%{-hoe::%uuid of {_p}%}%::mult}% <#8aed4c>+ %{hoes::%{-hoe::%uuid of {_p}%} + 1%::mult} - {hoes::%{-hoe::%uuid of {_p}%}%::mult}%"
     set slot 14 of {_s} to nether star named "<#4cd8ed>%{lang::%{-language::%uuid of {_p}%}%::viewallharvesters}%" with lore "&8%{lang::%{-language::%uuid of {_p}%}%::usageUtility}%" and " " and {lang::%{-language::%uuid of {_p}%}%::rightclickopen}
     open {_s} to {_p}
 
@@ -36,14 +36,11 @@ function showAllHarvesters(p: player):
     loop 9 times:
         set slot loop-number - 1 of {_s} to gray stained glass pane named " "
     loop 7 times:
-        if loop-number is 3:
-            set slot loop-number + 36 of {_s} to arrow named "<#d6be54>%{lang::%{-language::%uuid of {_p}%}%::previousPage}%"
-        
-        else if loop-number is 4:
+        if loop-number is 4:
             set slot loop-number + 36 of {_s} to barrier named "<#d65454>%{lang::%{-language::%uuid of {_p}%}%::return}%"
 
         else if loop-number is 5:
-            set slot loop-number + 36 of {_s} to arrow named "<#76d654>%{lang::%{-language::%uuid of {_p}%}%::nextPage}%"
+            set slot loop-number + 36 of {_s} to writable book named "<#ed619c>%{lang::%{-language::%uuid of {_p}%}%::theresmore}%"
 
         else:
             set slot loop-number + 36 of {_s} to gray stained glass pane named " "
@@ -59,7 +56,7 @@ function showAllHarvesters(p: player):
     
 
     
-    loop 24 times:
+    loop 25 times:
         slot loop-number + 9 of {_s} is air
         set slot loop-number + 9 of {_s} to {hoes::%{_hoheh}%}
         add 1 to {_hoheh}

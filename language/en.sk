@@ -58,3 +58,4 @@ on load:
     set {lang::EN::abilitymorepowerful} to "Makes abilities more powerful."
     set {lang::EN::doesnot} to "Does not"
     set {lang::EN::reducecooldown} to "reduce cooldown."
+    set {lang::EN::theresmore} to "There's more but it remains a mystery"

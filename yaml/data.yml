@@ -4,10 +4,10 @@ users:
         multiplier: 1
         speed: 0.44999999999999996
         lang: EN
-        hoe: 1
-        level: 19
+        hoe: 23
+        level: 61
         tokenChance: 0.001
         abilitySkill: 2
         ability: 3
-        balance: 2744.266666666782
-        tokens: 4
+        balance: 45707.089999999946
+        tokens: 44

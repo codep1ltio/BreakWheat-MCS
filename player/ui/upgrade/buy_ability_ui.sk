@@ -32,14 +32,14 @@ function showAllAbilities(p: player):
     loop 9 times:
         set slot loop-number - 1 of {_s} to gray stained glass pane named " "
     loop 7 times:
-        if loop-number is 3:
-            set slot loop-number + 36 of {_s} to arrow named "<#d6be54>%{lang::%{-language::%uuid of {_p}%}%::previousPage}%"
+        #if loop-number is 3:
+        #    set slot loop-number + 36 of {_s} to arrow named "<#d6be54>%{lang::%{-language::%uuid of {_p}%}%::previousPage}%"
         
-        else if loop-number is 4:
+        if loop-number is 4:
             set slot loop-number + 36 of {_s} to barrier named "<#d65454>%{lang::%{-language::%uuid of {_p}%}%::return}%"
 
-        else if loop-number is 5:
-            set slot loop-number + 36 of {_s} to arrow named "<#76d654>%{lang::%{-language::%uuid of {_p}%}%::nextPage}%"
+        #else if loop-number is 5:
+        #    set slot loop-number + 36 of {_s} to arrow named "<#76d654>%{lang::%{-language::%uuid of {_p}%}%::nextPage}%"
 
         else:
             set slot loop-number + 36 of {_s} to gray stained glass pane named " "

@@ -1,4 +1,4 @@
-# common ★☆☆☆☆☆☆, uncommon ★★☆☆☆☆☆, <#3881c9>Rare ★★★☆☆☆☆, epic ★★★★☆☆☆, legendary ★★★★★☆☆, <#aa38c9>Master ★★★★★★☆, <#FF4D4D>Grandmaster ★★★★★★★ || ★ ☆
+# common ★☆☆☆☆☆☆, uncommon ★★☆☆☆☆☆, <#3881c9>Rare ★★★☆☆☆☆, <#8142ff>Epic ★★★★☆☆☆, <#b0db23>Legendary ★★★★★☆☆, <#aa38c9>Master ★★★★★★☆, <#FF4D4D>Grandmaster ★★★★★★★ || ★ ☆
 on load:
     load_ability()
 
