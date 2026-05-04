@@ -17,6 +17,8 @@ function breakWheat(p: player, loc: location, isAbility: boolean = false):
     set {_oo} to 0
 
     if {-data::%uuid of {_p}%::blast} is 0:
+        {_isAbility} is false
+
         if {hoes::%{-hoe::%uuid of {_p}%}%::blast} is 0:
 
             set block at {_loc} to air
@@ -32,7 +34,7 @@ function breakWheat(p: player, loc: location, isAbility: boolean = false):
                 add 1 to {-wl::%uuid of {_p}%}
                 add 1 to {_oo}
 
-    else if {_isAbility} is true:
+    if {_isAbility} is true:
         set block at {_loc} to air
         set {_oo} to 1
         add {_loc} to {-wheatQueue::*}

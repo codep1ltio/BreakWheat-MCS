@@ -11,5 +11,5 @@ local function tinyMeteorShower(p: player):
         wait 3 ticks
 
 function doAbilityEffect(p: player):
-    if {-abilities::%uuid of {_p}%} is 5:
+    if {-abilities::%uuid of {_p}%} is 6:
         tinyMeteorShower({_p})
